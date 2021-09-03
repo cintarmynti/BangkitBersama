@@ -1,20 +1,81 @@
 import React from 'react'
+import { StyleSheet } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { SplashScreen } from '../../containers/pages'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { SplashScreen, Home, MakeHelp, Profile } from '../../containers/pages'
+import { TabIcon, MakeHelpButton, TabItemActive } from '../../components'
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const MainPages = () => {
+    return (
+        <Tab.Navigator screenOptions={{
+            headerShown: false,
+            tabBarShowLabel: false,
+            tabBarStyle: styles.bottomNavigation
+        }} >
+            <Tab.Screen options={{
+                tabBarIcon: ({ focused }) => {
+                    if (focused) {
+                        return (<TabItemActive img={require('../../assets/icon/home.png')} title="Home" />)
+                    } else {
+                        return (
+                            <TabIcon img={require('../../assets/icon/home.png')} />
+                        )
+                    }
+
+                }
+            }} name="Home" component={Home} />
+            <Tab.Screen options={{
+                tabBarIcon: ({ focused }) => {
+                    if (focused) {
+                        return (<MakeHelpButton active top={-13} content={<TabIcon img={require('../../assets/icon/heart.png')} width={31} height={31} />} />)
+                    } else {
+                        return (
+                            <MakeHelpButton top={-13} content={<TabIcon img={require('../../assets/icon/heart.png')} width={31} height={31} />} />
+                        )
+                    }
+
+                }
+            }} name="MakeHelp" component={MakeHelp} />
+            <Tab.Screen options={{
+                tabBarIcon: ({ focused }) => {
+                    if (focused) {
+                        return (<TabItemActive img={require('../../assets/icon/profile.png')} title="Profile" textLeft />)
+                    } else {
+                        return (
+                            <TabIcon img={require('../../assets/icon/profile.png')} />
+                        )
+                    }
+
+                }
+
+            }} name="Profile" component={Profile} />
+        </Tab.Navigator>
+    );
+}
 
 const Router = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="SplashScreen" >
                 <Stack.Screen name="SplashScreen" component={SplashScreen} />
+                <Stack.Screen name="MainPages" component={MainPages} />
             </Stack.Navigator>
         </NavigationContainer>
     );
 }
 
-module.exports = {
-    Router
-}
+export default Router
+
+const styles = StyleSheet.create({
+    bottomNavigation: {
+        height: 70,
+        color: '#FFFFFF',
+        paddingHorizontal: 24,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30
+    }
+})

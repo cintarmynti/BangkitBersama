@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet, Text } from 'react-native'
 import { Colors } from '../../../utils'
 
-const Small = ({ title, color = Colors.primary }) => {
+const Small = ({ title, color = Colors.primary, style }) => {
     return (
-        <Text style={[styles.small, { color: color }]}>{title}</Text>
+        <Text style={[styles.small, { color: color }, style]}>{title}</Text>
     )
 }
 

@@ -8,6 +8,10 @@ import Small from './Small'
 import OnBoardIllustarion from './OnBoardIllustarion'
 import DoubleCircle from './DoubleCircle'
 import AppLogo from './AppLogo'
+import TabIcon from './TabIcon'
+import ProfilePicture from './ProfilePicture'
+import CategoryIcon from './CategoryIcon'
+import RoundedSquare from './RoundedSquare'
 
 module.exports = {
     H1,
@@ -19,5 +23,9 @@ module.exports = {
     Small,
     OnBoardIllustarion,
     DoubleCircle,
-    AppLogo
+    AppLogo,
+    TabIcon,
+    ProfilePicture,
+    CategoryIcon,
+    RoundedSquare
 }

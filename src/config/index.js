@@ -1,1 +1,5 @@
-export * from './router'
+import Router from "./router"
+
+module.exports = {
+    Router
+}
