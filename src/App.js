@@ -1,11 +1,9 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Router } from './config'
 
 const App = () => {
   return (
-    <View>
-      <Text>Bangkit Bersama App.</Text>
-    </View>
+    <Router />
   )
 }
 
