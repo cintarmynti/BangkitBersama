@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">BangkitBersama</string>
+    <string name="app_name">
+      <record>
+        <![CDATA[
+        Bangkit
+        Bersama
+        ]]>
+    </record></string>
 </resources>

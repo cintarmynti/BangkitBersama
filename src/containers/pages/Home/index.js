@@ -1,28 +1,35 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
 import { HeaderHome } from '../../../components'
-import { HelpCategory } from '../../organisms'
+import { HelpCategory, HomeScrollContentOne, HomeScrollContentTwo } from '../../organisms'
 import { Colors } from '../../../utils'
 
 const Home = () => {
     return (
-        <View style={{ flex: 1, backgroundColor: Colors.primary, }}>
+        <ScrollView showsVerticalScrollIndicator={false} style={styles.wrapper}>
             <HeaderHome />
-            <View style={{
-                flex: 1,
-                backgroundColor: Colors.overlay,
-                borderTopLeftRadius: 30,
-                borderTopRightRadius: 30,
-                paddingHorizontal: 30,
-                paddingVertical: 40,
-
-            }}>
-                <HelpCategory />
+            <View style={styles.contentWrapper}>
+                <HelpCategory style={{ marginBottom: 40, paddingHorizontal: 30 }} />
+                <HomeScrollContentOne style={{ marginBottom: 40 }} />
+                <HomeScrollContentTwo style={{ marginBottom: 80 }} />
             </View>
-        </View>
+        </ScrollView>
     )
 }
 
 export default Home
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    wrapper: {
+        overflow: 'hidden',
+        backgroundColor: Colors.primary
+    },
+    contentWrapper: {
+        overflow: 'hidden',
+        backgroundColor: Colors.overlay,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        paddingVertical: 40,
+
+    }
+})

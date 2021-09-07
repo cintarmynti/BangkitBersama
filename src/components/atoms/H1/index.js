@@ -13,6 +13,6 @@ export default H1
 const styles = StyleSheet.create({
     h1: {
         fontSize: 50,
-        fontWeight: 'normal'
+        fontFamily: 'Nunito-Regular'
     }
 })

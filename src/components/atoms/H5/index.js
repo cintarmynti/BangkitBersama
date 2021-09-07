@@ -13,6 +13,6 @@ export default H5
 const styles = StyleSheet.create({
     h5: {
         fontSize: 12,
-        fontWeight: '400'
+        fontFamily: 'Nunito-SemiBold'
     }
 })

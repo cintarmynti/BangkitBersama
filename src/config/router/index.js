@@ -1,10 +1,11 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, StatusBar } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SplashScreen, Home, MakeHelp, Profile } from '../../containers/pages'
 import { TabIcon, MakeHelpButton, TabItemActive } from '../../components'
+import { Colors } from '../../utils'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -60,6 +61,10 @@ const MainPages = () => {
 const Router = () => {
     return (
         <NavigationContainer>
+            <StatusBar
+                backgroundColor={Colors.primary}
+                barStyle='light-content'
+            />
             <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="SplashScreen" >
                 <Stack.Screen name="SplashScreen" component={SplashScreen} />
                 <Stack.Screen name="MainPages" component={MainPages} />

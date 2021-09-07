@@ -13,6 +13,6 @@ export default Small
 const styles = StyleSheet.create({
     small: {
         fontSize: 12,
-        fontWeight: 'normal'
+        fontFamily: 'Nunito-Bold'
     }
 })

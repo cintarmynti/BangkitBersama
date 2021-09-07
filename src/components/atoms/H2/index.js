@@ -13,6 +13,6 @@ export default H2
 const styles = StyleSheet.create({
     h2: {
         fontSize: 38,
-        fontWeight: '400'
+        fontFamily: 'Nunito-SemiBold'
     }
 })

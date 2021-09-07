@@ -13,6 +13,6 @@ export default P
 const styles = StyleSheet.create({
     p: {
         fontSize: 16,
-        fontWeight: 'normal'
+        fontFamily: 'Nunito-Bold'
     }
 })

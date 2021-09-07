@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { CategoryItem } from '../../../components'
 
-const HelpCategory = () => {
+const HelpCategory = ({ style }) => {
     return (
-        <View style={styles.wrapper}>
+        <View style={[styles.wrapper, style]}>
             <CategoryItem title="Covid 19" img={require('../../../assets/icon/covid.png')} />
             <CategoryItem title="Ekonomi" img={require('../../../assets/icon/ekonomi.png')} />
             <CategoryItem title="Pangan" img={require('../../../assets/icon/pangan.png')} />
