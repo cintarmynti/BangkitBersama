@@ -13,7 +13,6 @@ class HelpController extends Controller
      */
     public function index()
     {
-
     }
 
     /**
@@ -84,7 +83,7 @@ class HelpController extends Controller
 
     public function covid_index()
     {
-        return view('pages.user');
+        return view('pages.helps.covid');
     }
 
     public function ekonomi_index()

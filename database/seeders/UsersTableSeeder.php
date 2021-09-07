@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
         User::create([
             'role_id' => 1,
             'name' => 'Ampersand Team',
+            'username' => 'Ampersand',
             'email' => 'ampersandtechsolution@gmail.com',
             'password' => bcrypt('password123')
         ]);

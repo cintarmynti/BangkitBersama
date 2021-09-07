@@ -7,7 +7,7 @@
   <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
   <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
   <meta name="author" content="PIXINVENT">
-  <title>Login Page - Stack Responsive Bootstrap 4 Admin Template</title>
+  <title>BangkitBersama - Login Superadmin</title>
   <link rel="apple-touch-icon" href="{{asset('app-assets/images/ico/apple-icon-120.png')}}">
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/ico/favicon.ico')}}">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
@@ -43,11 +43,11 @@ data-open="click" data-menu="vertical-menu" data-col="1-column">
                 <div class="card-header border-0">
                   <div class="card-title text-center">
                     <div class="p-1">
-                      <img src="{{asset('app-assets/images/logo/stack-logo-dark.png')}}" alt="branding logo">
+                      <img width="100" src="{{asset('app-assets/images/logo/bangkit-bersama.png')}}" alt="branding logo">
                     </div>
                   </div>
                   <h6 class="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
-                    <span>Login with Stack</span>
+                    <span>Login Superadmin</span>
                   </h6>
                 </div>
                 <div class="card-content">
@@ -66,6 +66,7 @@ data-open="click" data-menu="vertical-menu" data-col="1-column">
                                     </span>
                                 @enderror
                       </fieldset>
+                      <br>
                       <fieldset class="form-group position-relative has-icon-left">
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required  class="form-control form-control-lg" id="user-password" placeholder="Enter Password"
                         required>
@@ -87,18 +88,11 @@ data-open="click" data-menu="vertical-menu" data-col="1-column">
                           </fieldset>
                         </div>
                         @if (Route::has('password.request'))
-                        <div class="col-md-6 col-12 text-center text-md-right"><a href="{{ route('password.request') }}" class="card-link">{{ __('Forgot Your Password?') }}</a></div>
-
+                        <div class="col-md-6 col-12 text-center text-md-right"><a href="{{ route('password.request') }}" class="card-link ext-primary">{{ __('Forgot Your Password?') }}</a></div>
                         @endif
                       </div>
                       <button type="submit" class="btn btn-primary btn-lg btn-block"><i class="ft-unlock"></i>  {{ __('Login') }}</button>
                     </form>
-                  </div>
-                </div>
-                <div class="card-footer">
-                  <div class="">
-                    <p class="float-sm-right text-center m-0">New to Stack? <a  href="{{ route('register') }}" class="card-link">Register</a></p>
-
                   </div>
                 </div>
               </div>

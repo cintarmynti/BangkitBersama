@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title', 'Dashboard')
+
 @section('content')
 <div class="content-header row">
 </div>
@@ -9,7 +11,7 @@
     <div class="col-lg-12 col-md-12 col-12">
       <div class="card">
         <div class="card-header border-0-bottom">
-          <h4 class="card-title">Visitors Overview</h4>
+          <h4 class="card-title">Dashboard Overview</h4>
           <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
           <div class="heading-elements">
             <ul class="list-inline mb-0">
