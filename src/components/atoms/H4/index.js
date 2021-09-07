@@ -13,6 +13,6 @@ export default H4
 const styles = StyleSheet.create({
     h4: {
         fontSize: 21,
-        fontWeight: 'Nunito-Regular'
+        fontFamily: 'Nunito-Regular'
     }
 })

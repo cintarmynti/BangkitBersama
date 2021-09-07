@@ -12,6 +12,8 @@ import HeaderProfile from './HeaderProfile'
 import SecondaryButton from './SecondaryButton'
 import IconLeftTextRight from './IconLeftTextRight'
 import OutlineButton from './OutlineButton'
+import LinearButton from './LinearButton'
+import CircleLinearButton from './CircleLinearButton'
 
 module.exports = {
     MakeHelpButton,
@@ -27,5 +29,7 @@ module.exports = {
     HeaderProfile,
     SecondaryButton,
     IconLeftTextRight,
-    OutlineButton
+    OutlineButton,
+    LinearButton,
+    CircleLinearButton
 }

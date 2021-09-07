@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StyleSheet, View } from 'react-native'
 import { HeaderHome } from '../../../components'
 import { HelpCategory, HomeScrollContentOne, HomeScrollContentTwo } from '../../organisms'
 import { Colors } from '../../../utils'

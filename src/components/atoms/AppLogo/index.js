@@ -1,12 +1,12 @@
 import React from 'react'
 import { Image } from 'react-native'
 
-const AppLogo = ({ width = 150, height = 150 }) => {
+const AppLogo = ({ width = 150, height = 150, style }) => {
     return (
-        <Image style={{
+        <Image style={[{
             width: width,
             height: height
-        }} source={require('../../../assets/logo/bangkitbersama.png')} />
+        }, style]} source={require('../../../assets/logo/bangkitbersama.png')} />
     )
 }
 

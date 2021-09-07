@@ -1,13 +1,26 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StyleSheet, View } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StackActions } from '@react-navigation/native'
 import { Colors } from '../../../utils'
 import { AppLogo, H2, DoubleCircle } from '../../../components'
 
 const SplashScreen = ({ navigation }) => {
+    const [isFirtsLaunch, setIsFirtsLaunch] = useState(null)
+    const [nextPage, setNextPage] = useState('Welcome')
+
     useEffect(() => {
         setTimeout(() => {
-            navigation.dispatch(StackActions.replace('MainPages'))
+
+            if (!AsyncStorage.getItem('isFirtsLaunch')) {
+                AsyncStorage.setItem('isFirtsLaunch', true);
+                setIsFirtsLaunch(true)
+                setNextPage('Welcome')
+            } else {
+                setIsFirtsLaunch(false)
+            }
+
+            navigation.dispatch(StackActions.replace(nextPage))
         }, 3000)
     }, [])
 
