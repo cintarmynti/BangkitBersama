@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StackActions } from '@react-navigation/native'
 import { StyleSheet, View, Dimensions } from 'react-native'
 import Carousel, { Pagination } from 'react-native-snap-carousel';
@@ -47,7 +48,10 @@ const setButton = ({ navigation, activeSlide, setActiveSlide }) => {
         }} icon={require('../../../assets/icon/left-broken-arrow.png')} />
 
     } else {
-        return <LinearButton onPress={() => { navigation.dispatch(StackActions.replace('Auth')) }} style={{ marginBottom: 40 }} nextLabel={false} width={206} paddingVertical={15} title="Selanjutnya" />
+        return <LinearButton onPress={() => {
+            AsyncStorage.setItem('isFirtsLaunch', 'true')
+            navigation.dispatch(StackActions.replace('Auth'))
+        }} style={{ marginBottom: 40 }} nextLabel={false} width={206} paddingVertical={15} title="Selanjutnya" />
     }
 }
 

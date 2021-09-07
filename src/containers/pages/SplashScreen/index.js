@@ -6,23 +6,21 @@ import { Colors } from '../../../utils'
 import { AppLogo, H2, DoubleCircle } from '../../../components'
 
 const SplashScreen = ({ navigation }) => {
-    const [isFirtsLaunch, setIsFirtsLaunch] = useState(null)
-    const [nextPage, setNextPage] = useState('Welcome')
+    const [nextPage, setNextPage] = useState('')
 
-    useEffect(() => {
+    useEffect(async () => {
+        await AsyncStorage.getItem('isFirtsLaunch')
+            .then(value => {
+                if (!value) {
+                    setNextPage('Welcome')
+                } else {
+                    setNextPage('Auth')
+                }
+            })
         setTimeout(() => {
-
-            if (!AsyncStorage.getItem('isFirtsLaunch')) {
-                AsyncStorage.setItem('isFirtsLaunch', true);
-                setIsFirtsLaunch(true)
-                setNextPage('Welcome')
-            } else {
-                setIsFirtsLaunch(false)
-            }
-
             navigation.dispatch(StackActions.replace(nextPage))
         }, 3000)
-    }, [])
+    })
 
     return (
         <View style={styles.wrapper}>
