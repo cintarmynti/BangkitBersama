@@ -14,6 +14,9 @@ import IconLeftTextRight from './IconLeftTextRight'
 import OutlineButton from './OutlineButton'
 import LinearButton from './LinearButton'
 import CircleLinearButton from './CircleLinearButton'
+import InputText from './InputText'
+import HeaderLogin from './HeaderLogin'
+import LoginContent from './LoginContent'
 
 module.exports = {
     MakeHelpButton,
@@ -31,5 +34,8 @@ module.exports = {
     IconLeftTextRight,
     OutlineButton,
     LinearButton,
-    CircleLinearButton
+    CircleLinearButton,
+    InputText,
+    HeaderLogin,
+    LoginContent
 }
