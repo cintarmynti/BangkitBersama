@@ -10,11 +10,18 @@ const SplashScreen = ({ navigation }) => {
 
     useEffect(async () => {
         await AsyncStorage.getItem('isFirtsLaunch')
-            .then(value => {
+            .then(async (value) => {
                 if (!value) {
                     setNextPage('Welcome')
                 } else {
-                    setNextPage('Auth')
+                    await AsyncStorage.getItem('isLogged')
+                        .then(value => {
+                            if (value) {
+                                setNextPage('MainPages')
+                            } else {
+                                setNextPage('Auth')
+                            }
+                        })
                 }
             })
         setTimeout(() => {

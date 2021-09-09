@@ -4,6 +4,7 @@ import { Colors } from '../../../utils'
 import { OnBoardIllustarion, LinearButton, OutlineButton } from '../../../components'
 
 const Auth = ({ navigation }) => {
+
     return (
         <View style={styles.wrapper}>
             <OnBoardIllustarion img={require('../../../assets/illustrations/onboard-5.png')} />
