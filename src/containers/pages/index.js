@@ -7,6 +7,7 @@ import OnBoarding from './OnBoarding'
 import Auth from './Auth'
 import Login from './Login'
 import Register from './Register'
+import HelpDetail from './HelpDetail'
 
 module.exports = {
     Home,
@@ -17,5 +18,6 @@ module.exports = {
     OnBoarding,
     Auth,
     Login,
-    Register
+    Register,
+    HelpDetail
 }

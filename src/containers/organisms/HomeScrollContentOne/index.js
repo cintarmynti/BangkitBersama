@@ -2,7 +2,7 @@ import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { H4, CardCoverTop } from '../../../components'
 
-const HomeScrollContentOne = ({ style }) => {
+const HomeScrollContentOne = ({ navigation, style }) => {
     return (
         <View style={style}>
             <H4 title="Bantu Mereka Bangkit" style={{ marginBottom: 16, paddingHorizontal: 30 }} />
@@ -13,6 +13,7 @@ const HomeScrollContentOne = ({ style }) => {
                 }}
                 showsHorizontalScrollIndicator={false}>
                 <CardCoverTop
+                    onPress={() => navigation.navigate('HelpDetail')}
                     img={require('../../../assets/picture/bantu-bangkit.png')}
                     title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
                     price="RP. 120.000.000,-"

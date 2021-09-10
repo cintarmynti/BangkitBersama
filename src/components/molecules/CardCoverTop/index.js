@@ -3,9 +3,9 @@ import { StyleSheet, View, Image, TouchableOpacity } from 'react-native'
 import { P, Xsmall } from '../../../components'
 import { Colors } from '../../../utils'
 
-const CardCoverTop = ({ img, title, price, date, percentage, style }) => {
+const CardCoverTop = ({ onPress, img, title, price, date, percentage, style }) => {
     return (
-        <TouchableOpacity style={[styles.wrapper, style]}>
+        <TouchableOpacity onPress={onPress} style={[styles.wrapper, style]}>
             <View style={styles.coverWrapper}>
                 <Image style={styles.imgCover} source={img} />
             </View>
