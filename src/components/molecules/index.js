@@ -17,6 +17,7 @@ import CircleLinearButton from './CircleLinearButton'
 import InputText from './InputText'
 import HeaderLogin from './HeaderLogin'
 import LoginContent from './LoginContent'
+import RelawanSection from './RelawanSection'
 
 module.exports = {
     MakeHelpButton,
@@ -37,5 +38,6 @@ module.exports = {
     CircleLinearButton,
     InputText,
     HeaderLogin,
-    LoginContent
+    LoginContent,
+    RelawanSection
 }
