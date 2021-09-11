@@ -4,7 +4,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StackActions } from '@react-navigation/native'
 import PrimaryButton from '../PrimaryButton'
 import InputText from '../InputText'
-import { Colors } from '../../../utils'
+import {H1, H2, H3, H4, H5, P, Small} from '../../../components/atoms'
+import Colors from '../../../utils/Colors'
 
 const LoginContent = ({ navigation }) => {
     return (
@@ -17,11 +18,11 @@ const LoginContent = ({ navigation }) => {
                 onPress={() => {
                     AsyncStorage.setItem('isLogged', 'true')
                     navigation.dispatch(StackActions.replace('MainPages'))
-                }} title="Masuk" style={{ marginTop: 140, height: 59, marginBottom: 24 }} ></PrimaryButton>
-            <View style={{ flexDirection: 'row', alignSelf: 'center', paddingTop: 5 }}>
-                <Text style={{ marginRight: 5 }}>Belum punya akun?</Text>
+                }} title="Masuk" style={{ marginTop: 112, height: 59, marginBottom: 24, windth:351 }} ></PrimaryButton>
+            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
+                <Small style={{ marginRight: 5, color:Colors.darkGrey }} title="Belum punya akun?" />
                 <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                    <Text style={{ fontFamily: 'Nunito-Bold' }}>Daftar</Text>
+                    <Small style={{ fontFamily: 'Nunito-Bold', fontWeight:'bold', color:Colors.darkGrey }} title="Daftar"/>
                 </TouchableOpacity>
             </View>
         </View>

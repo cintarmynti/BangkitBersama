@@ -23,26 +23,26 @@ const HelpDetail = () => {
                     </View>
                     {/* H1 */}
                     <View>
-                       <H4 title="Bantu Pak Adi Memenuhi Kebutuhan Keluarga" style={{marginTop:24}}/>
+                       <H4 title="Bantu Pak Adi Memenuhi Kebutuhan Keluarga" style={{marginTop:24, fontFamily:'Nunito-Bold'}}/>
                     </View>
 
                     {/* H2  */}
                     <View style={{marginTop:16}}>
-                        <P title="Berakhir : 21 Oktober 2003" /> 
-                        <P title="Penerima : 3 Orang" />     
+                        <P style={{fontFamily:'Nunito-Extrabold'}} title="Berakhir : 21 Oktober 2003" /> 
+                        <P style={{fontFamily:'Nunito-Extrabold'}} title="Penerima : 3 Orang" />     
                     </View> 
 
                     {/* Button sama H4  */}
                     <View>
                         <PrimaryButton title="Donasi" style={{height:49, marginTop:40}}/>
-                        <H4 title="Inisiator" style={{marginTop:40}}/>
+                        <H4 title="Inisiator" style={{marginTop:40, fontFamily:'Nunito-Bold'}}/>
                     </View>
 
                     {/* Relawan Section  */}
                     <RelawanSection/>
 
                     <View>
-                        <H4 title="Deskripsi" style={{marginTop:40}}/>
+                        <H4 title="Deskripsi" style={{marginTop:40, fontFamily:'Nunito-Bold'}}/>
                         <View style={{ padding:16}}>
                             <P title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus..." style={{color:Colors.darkGrey}}/>
                             <P title="Selengkapnya"/>
@@ -50,12 +50,12 @@ const HelpDetail = () => {
                     </View>
 
                     <View>
-                    <H4 title="Donatur(78)" style={{marginTop:40}}/>
+                    <H4 title="Donatur(78)" style={{marginTop:40, fontFamily:'Nunito-Bold'}}/>
                     <RelawanSection/>
                     <RelawanSection/>
                     </View>
-                    <View>
-                        <OutlineButton title="Semua"  icon={require('../../../assets/icon/chevron-down.png')} style={{marginTop:24}}/>
+                    <View style={{alignItems:'center'}}>
+                        <OutlineButton title="Semua"  icon={require('../../../assets/icon/chevron-down.png')} style={{marginTop:24, width:100, height:50, fontSize:8}}/>
                     </View>
                 </View>
                </ScrollView>

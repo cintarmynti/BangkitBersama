@@ -14,6 +14,7 @@ const RelawanSection = ({icon}) => {
                 <Text style={{fontSize:12, fontFamily:'Nunito-ExtraBold', color:'gray', marginTop:8}}>Relawan Masyarakat</Text>
             </View>
             <View style={{ alignSelf:'center'}}>
+                {/* iki nek pen nampilno icon user e nyalakno aku gaero carane ngekeki props lek tag  */}
                 {/* <Image source={require('../../../assets/icon/User.png')} style={{width:24, height:24}}/> */}
             </View>
         </View>
