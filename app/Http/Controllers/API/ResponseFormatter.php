@@ -9,11 +9,10 @@ class ResponseFormatter
             "status" => null,
             "code" => null,
             "message" => null
-        ],
-        "data" => []
+        ]
     ];
 
-    public static function success($message, $data)
+    public static function success($message, $data = [])
     {
         self::$response['meta']['status'] = 'success!';
         self::$response['meta']['code'] = 200;
@@ -23,11 +22,12 @@ class ResponseFormatter
         return response()->json(self::$response);
     }
 
-    public static function failed($message)
+    public static function failed($message, $code = 500, $errors = [])
     {
         self::$response['meta']['status'] = 'failed!';
-        self::$response['meta']['code'] = 500;
+        self::$response['meta']['code'] = $code;
         self::$response['meta']['message'] = $message;
+        self::$response['errors'] = $errors;
 
         return response()->json(self::$response);
     }

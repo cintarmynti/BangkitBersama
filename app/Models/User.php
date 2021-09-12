@@ -16,7 +16,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'photo',
+        'name',
+        'username',
+        'address',
+        'email',
+        'password',
+        'id_card',
+        'contact'
     ];
 
     /**
@@ -27,4 +34,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getPhotoAttribute($value)
+    {
+        return url('storage/' . $value);
+    }
+
+    public function getIdCardAttribute($value)
+    {
+        return url('storage/' . $value);
+    }
 }
