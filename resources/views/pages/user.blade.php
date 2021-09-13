@@ -25,6 +25,7 @@
                   </thead>
                   <tbody>
                     @foreach ($users as $user)
+                    <tr>
                         <td>{{$user -> email}}</td>
                         <td>{{$user -> name}}</td>
                         <td>{{$user -> address}}</td>
@@ -35,6 +36,8 @@
                             <button type="button" class="btn btn-sm btn-icon btn-danger"><i class="fa fa-trash"></i></button>
                             </form>
                         </td>
+                    </tr>
+
                     @endforeach
 
                   </tbody>
