@@ -15,6 +15,8 @@
   <!-- BEGIN VENDOR CSS-->
     @include('includes.style')
   <!-- END Custom CSS-->
+    @stack('style')
+
 </head>
 <body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar"
 data-open="click" data-menu="vertical-menu" data-col="2-columns">
@@ -35,5 +37,7 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
   <!-- BEGIN VENDOR JS-->
   @include('includes.script')
   <!-- END PAGE LEVEL JS-->
+
+  @stack('data-tables')
 </body>
 </html>

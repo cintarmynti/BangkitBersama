@@ -42,4 +42,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function getRoleRelation(){
+        //cuma bisa jadi 1 admin
+        return $this->belongsTo('App\Models\Role', 'id', 'role_id');
+    }
+
+
+    public function getHelpReview(){
+        return $this->hasMany('App\Models\HelpReview', 'help_id', 'id');
+    }
+
+    public function getHelp(){
+        return $this->hasOne('App\Models\Help', 'user_id', 'user');
+    }
 }
