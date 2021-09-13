@@ -21,7 +21,8 @@ class Helps extends Migration
             $table->string('name');
             $table->longText('description');
             $table->integer('quota');
-            $table->integer('hellp_status_id');
+            $table->timestamp('end_date');
+            $table->integer('hellp_status_id')->default(1);
             $table->timestamps();
         });
     }
