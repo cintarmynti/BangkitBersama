@@ -3,7 +3,7 @@ import { StyleSheet, StatusBar } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { SplashScreen, Home, MakeHelp, Profile, Welcome, OnBoarding, Auth, Login, Register, HelpDetail } from '../../containers/pages'
+import { SplashScreen, Home, MakeHelp, Profile, Welcome, OnBoarding, Auth, Login, Register, HelpDetail, TawarBantuan } from '../../containers/pages'
 import { TabIcon, MakeHelpButton, TabItemActive } from '../../components'
 import { Colors } from '../../utils'
 
@@ -74,6 +74,8 @@ const Router = () => {
                 <Stack.Screen name="Register" component={Register} />
                 <Stack.Screen name="MainPages" component={MainPages} />
                 <Stack.Screen name="HelpDetail" component={HelpDetail} />
+                <Stack.Screen name="TawarBantuan" component={TawarBantuan} />
+
             </Stack.Navigator>
         </NavigationContainer>
     );

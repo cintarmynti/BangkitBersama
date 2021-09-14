@@ -8,6 +8,7 @@ import Auth from './Auth'
 import Login from './Login'
 import Register from './Register'
 import HelpDetail from './HelpDetail'
+import TawarBantuan from './TawarBantuan'
 
 module.exports = {
     Home,
@@ -19,5 +20,6 @@ module.exports = {
     Auth,
     Login,
     Register,
-    HelpDetail
+    HelpDetail,
+    TawarBantuan
 }

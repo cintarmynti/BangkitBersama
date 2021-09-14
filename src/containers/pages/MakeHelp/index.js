@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, View } from 'react-native'
 import { Colors } from '../../../utils'
 import { H4, FeatureCard } from '../../../components'
 
-const MakeHelp = () => {
+const MakeHelp = ({ navigation}) => {
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.wrapper}>
             <View style={{ alignItems: 'center' }}>
@@ -11,6 +11,7 @@ const MakeHelp = () => {
                     title={"Sekecil Apapun Bantuan Kamu, Akan Membantu Mereka Untuk Bangkit"}
                     style={{ textAlign: 'center', marginBottom: 53 }} />
                 <FeatureCard
+                    navigation={navigation}
                     img={require('../../../assets/illustrations/feature-1.png')}
                     title={"TAWARKAN BANTUAN \nDAN JASA"}
                     text={"Gabung jadi relawan untuk membantu masyarakat \nkita bangkit"}

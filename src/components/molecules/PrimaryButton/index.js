@@ -9,13 +9,13 @@ const PrimaryButton = ({ title, style, icon, paddingVertical = 8, onPress }) => 
             return (
                 <TouchableOpacity onPress={onPress} style={[styles.wrapper, { paddingVertical: paddingVertical, }, style]}>
                     <Sicon img={icon} width={15} height={15} style={{ marginRight: 8 }} />
-                    <P title={title} color="#FFFFFF" />
+                    <P title={title} style={style} color="#FFFFFF" />
                 </TouchableOpacity>
             )
         } else {
             return (
                 <TouchableOpacity onPress={onPress} style={[styles.wrapper, { paddingVertical: paddingVertical, }, style]}>
-                    <P title={title} color="#FFFFFF" />
+                    <P title={title} style color="#FFFFFF" />
                 </TouchableOpacity>
             )
         }
