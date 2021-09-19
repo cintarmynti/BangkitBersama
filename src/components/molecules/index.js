@@ -1,4 +1,4 @@
-import MakeHelpButton from './MakeHelpButton'
+import FeaturesButton from './FeaturesButton'
 import TabItemButton from './TabItemButton'
 import TabItemActive from './TabItemActive'
 import HeaderHome from './HeaderHome'
@@ -20,7 +20,7 @@ import LoginContent from './LoginContent'
 import RelawanSection from './RelawanSection'
 
 module.exports = {
-    MakeHelpButton,
+    FeaturesButton,
     TabItemButton,
     TabItemActive,
     HeaderHome,

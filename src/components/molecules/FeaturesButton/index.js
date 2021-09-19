@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Colors } from '../../../utils'
 
-const MakeHelpButton = ({ active, content, top, bottom, left, right }) => {
+const FeaturesButton = ({ active, content, top, bottom, left, right }) => {
     return (
-        <View style={[styles.makeHelpButton, {
+        <View style={[styles.FeaturesButton, {
             top: top,
             bottom: bottom,
             left: left,
@@ -15,10 +15,10 @@ const MakeHelpButton = ({ active, content, top, bottom, left, right }) => {
     )
 }
 
-export default MakeHelpButton
+export default FeaturesButton
 
 const styles = StyleSheet.create({
-    makeHelpButton: {
+    FeaturesButton: {
         width: 72,
         height: 72,
         backgroundColor: Colors.primary,

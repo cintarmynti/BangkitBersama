@@ -3,8 +3,21 @@ import { StyleSheet, StatusBar } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { SplashScreen, Home, MakeHelp, Profile, Welcome, OnBoarding, Auth, Login, Register, HelpDetail, TawarBantuan } from '../../containers/pages'
-import { TabIcon, MakeHelpButton, TabItemActive } from '../../components'
+import {
+    SplashScreen,
+    Home,
+    Features,
+    Profile,
+    Welcome,
+    OnBoarding,
+    Auth,
+    Login,
+    Register,
+    HelpDetail,
+    TawarBantuan,
+    HelpInput
+} from '../../containers/pages'
+import { TabIcon, FeaturesButton, TabItemActive } from '../../components'
 import { Colors } from '../../utils'
 
 const Stack = createNativeStackNavigator();
@@ -32,15 +45,15 @@ const MainPages = () => {
             <Tab.Screen options={{
                 tabBarIcon: ({ focused }) => {
                     if (focused) {
-                        return (<MakeHelpButton active top={-13} content={<TabIcon img={require('../../assets/icon/heart.png')} width={31} height={31} />} />)
+                        return (<FeaturesButton active top={-13} content={<TabIcon img={require('../../assets/icon/heart.png')} width={31} height={31} />} />)
                     } else {
                         return (
-                            <MakeHelpButton top={-13} content={<TabIcon img={require('../../assets/icon/heart.png')} width={31} height={31} />} />
+                            <FeaturesButton top={-13} content={<TabIcon img={require('../../assets/icon/heart.png')} width={31} height={31} />} />
                         )
                     }
 
                 }
-            }} name="MakeHelp" component={MakeHelp} />
+            }} name="Features" component={Features} />
             <Tab.Screen options={{
                 tabBarIcon: ({ focused }) => {
                     if (focused) {
@@ -75,6 +88,7 @@ const Router = () => {
                 <Stack.Screen name="MainPages" component={MainPages} />
                 <Stack.Screen name="HelpDetail" component={HelpDetail} />
                 <Stack.Screen name="TawarBantuan" component={TawarBantuan} />
+                <Stack.Screen name="HelpInput" component={HelpInput} />
 
             </Stack.Navigator>
         </NavigationContainer>

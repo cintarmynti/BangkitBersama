@@ -3,7 +3,7 @@ import { StyleSheet, ScrollView, View } from 'react-native'
 import { Colors } from '../../../utils'
 import { H4, FeatureCard } from '../../../components'
 
-const MakeHelp = ({ navigation}) => {
+const Features = ({ navigation }) => {
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.wrapper}>
             <View style={{ alignItems: 'center' }}>
@@ -37,7 +37,7 @@ const MakeHelp = ({ navigation}) => {
     )
 }
 
-export default MakeHelp
+export default Features
 
 const styles = StyleSheet.create({
     wrapper: {
