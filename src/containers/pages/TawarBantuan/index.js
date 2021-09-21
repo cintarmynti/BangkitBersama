@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ScrollView, Image } from 'react-native'
+import { View, ScrollView, Image, StyleSheet } from 'react-native'
 import { P, PrimaryButton, H4, OutlineButton, H5, Xsmall } from '../../../components'
 import Colors from '../../../utils/Colors'
 
@@ -24,7 +24,7 @@ const TawarBantuan = ({ navigation }) => {
                     <OutlineButton style={{ fontSize: 12, width: 85, marginHorizontal: 5 }} title="Berakhir" />
                 </View>
 
-                <View style={{ marginTop: 24, flexDirection: 'row', backgroundColor: 'white', height: 87, alignItems: 'center', paddingLeft: 16, borderRadius: 15 }}>
+                <View style={styles.card}>
                     <Image source={require('../../../assets/icon/covid.png')} />
                     <View style={{ marginLeft: 16, width: 200 }}>
                         <H5 title="KONSULTASI PASIEN COVID-19 GRATIS" />
@@ -32,7 +32,7 @@ const TawarBantuan = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View style={{ marginTop: 24, flexDirection: 'row', backgroundColor: 'white', height: 87, alignItems: 'center', paddingLeft: 16, borderRadius: 15 }}>
+                <View style={styles.card}>
                     <Image source={require('../../../assets/icon/ekonomi.png')} />
                     <View style={{ marginLeft: 16, width: 200 }}>
                         <H5 title="BANTUAN TUNAI UNTUK GOLONGAN MBR" />
@@ -40,7 +40,7 @@ const TawarBantuan = ({ navigation }) => {
                     </View>
                 </View>
 
-                <View style={{ marginTop: 24, flexDirection: 'row', backgroundColor: 'white', height: 87, alignItems: 'center', paddingLeft: 16, borderRadius: 15 }}>
+                <View style={styles.card}>
                     <Image source={require('../../../assets/icon/jasa.png')} />
                     <View style={{ marginLeft: 16, width: 200 }}>
                         <H5 title="ANTAR JEMPUT PASIEN COVID PRIBADI" />
@@ -56,3 +56,17 @@ const TawarBantuan = ({ navigation }) => {
 }
 
 export default TawarBantuan
+
+const styles = StyleSheet.create({
+    card: { 
+        marginTop: 24, 
+        flexDirection: 'row', 
+        backgroundColor: 'white', 
+        height: 87, 
+        alignItems: 'center', 
+        paddingLeft: 16, 
+        borderRadius: 15 
+    }
+
+    
+})

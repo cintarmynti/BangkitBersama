@@ -34,7 +34,6 @@ const HelpInput = () => {
                 </View> 
             </View>
            
-
             {/* form  */}
             <View style={{marginTop:48}}>
                 {/* Selectbox  */}
@@ -69,7 +68,7 @@ const HelpInput = () => {
                 {/* input deskripsi */}
                 <View style={{marginTop:24}}>
                     <P title="Deskripsi" style={{color:Colors.darkGrey}} />
-                    <TextInput placeholder="Ceritakan tentang bantuan ini" style={styles.InputDesc}/>
+                    <TextInput multiline={true} numberOfLines={4} placeholder="Ceritakan tentang bantuan ini" style={styles.InputDesc}/>
                 </View>
                 
                 {/* jumlah penerima  */}
@@ -84,7 +83,8 @@ const HelpInput = () => {
                 
                 <PrimaryButton title="Tawarkan" style={{marginTop:40, marginBottom:32, height:59}} />
             </View>
-        </View>
+       
+             </View>
     </ScrollView>
         
     )
