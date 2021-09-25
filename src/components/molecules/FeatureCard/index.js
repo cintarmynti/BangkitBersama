@@ -5,7 +5,7 @@ import { P, Xsmall, Sicon } from '../../../components'
 
 const FeatureCard = ({ img, title, text, style, navigation }) => {
     return (
-        <TouchableOpacity style={[styles.wrapper, style]} onPress={() => navigation.navigate('TawarBantuan')}>
+        <TouchableOpacity style={[styles.wrapper, style]} onPress={navigation}>
             <Image source={img} style={{
                 width: styles.wrapper.width - styles.sectionWrapper.width,
                 alignSelf: 'center'

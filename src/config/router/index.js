@@ -19,6 +19,7 @@ import {
 } from '../../containers/pages'
 import { TabIcon, FeaturesButton, TabItemActive } from '../../components'
 import { Colors } from '../../utils'
+import HeartIcon from '../../assets/icon/heart.svg'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -45,10 +46,10 @@ const MainPages = () => {
             <Tab.Screen options={{
                 tabBarIcon: ({ focused }) => {
                     if (focused) {
-                        return (<FeaturesButton active top={-13} content={<TabIcon img={require('../../assets/icon/heart.png')} width={31} height={31} />} />)
+                        return (<FeaturesButton active top={-13} content={<HeartIcon />} />)
                     } else {
                         return (
-                            <FeaturesButton top={-13} content={<TabIcon img={require('../../assets/icon/heart.png')} width={31} height={31} />} />
+                            <FeaturesButton top={-13} content={<HeartIcon />} />
                         )
                     }
 

@@ -3,14 +3,14 @@ import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-nati
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StackActions } from '@react-navigation/native'
 import { InputText, PrimaryButton } from '../../../components'
-import {H1, H2, H3, H4, H5, P, Small} from '../../../components/atoms'
+import { H1, H2, H3, H4, H5, P, Small } from '../../../components/atoms'
 import Colors from '../../../utils/Colors'
 
 
 const Register = ({ navigation }) => {
     return (
         <ScrollView style={styles.wrapper}>
-            <H3 title="Daftar" style={{marginTop:40, color:Colors.monoBlack}}/>
+            <H3 title="Daftar" style={{ marginTop: 40, color: Colors.monoBlack }} />
             <View >
                 <InputText style={{ marginTop: 40 }} placeholder="Nama Lengkap" name="Nama Lengkap"></InputText>
                 <InputText style={{ marginTop: 20 }} placeholder="Email" name="Email"></InputText>
@@ -25,11 +25,11 @@ const Register = ({ navigation }) => {
                         navigation.dispatch(StackActions.replace('MainPages'))
                     }
                     }
-                    title="Daftar" style={{ marginTop: 30, height: 59 }} ></PrimaryButton>
+                    title="Daftar" style={{ marginTop: 30, height: 59 }} />
                 <View style={{ flexDirection: 'row', alignSelf: 'center', marginTop: 24 }}>
-                    <Small title='Sudah punya akun?' style={{ marginRight: 5, color:Colors.monoBlack }}/>
+                    <Small title='Sudah punya akun?' style={{ marginRight: 5, color: Colors.monoBlack }} />
                     <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-                        <Small style={{ fontFamily: 'Nunito-Bold', fontWeight:'bold', color:Colors.monoBlack }} title="Masuk"/>
+                        <Small style={{ fontFamily: 'Nunito-Bold', fontWeight: 'bold', color: Colors.monoBlack }} title="Masuk" />
                     </TouchableOpacity>
                 </View>
             </View>

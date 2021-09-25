@@ -1,7 +1,8 @@
 import React from 'react'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import { PictureLeftTextRight, PrimaryButton } from '../../../components'
 import { Colors } from '../../../utils'
+import ChatIcon from '../../../assets/icon/chat.svg'
 
 const CardTwoSide = ({ style, imgTop, titleTop, textTop, imgBottom, titleBottom, textBottom, onPress, onPressChat }) => {
     return (
@@ -20,7 +21,8 @@ const CardTwoSide = ({ style, imgTop, titleTop, textTop, imgBottom, titleBottom,
                 title={titleBottom}
                 text={textBottom}
             />
-            <PrimaryButton onPress={onPressChat} title="Hubungi Sekarang" icon={require('../../../assets/icon/chat.png')} />
+            <PrimaryButton onPress={onPressChat} title="Hubungi Sekarang" icon={<ChatIcon width={15} height={15} />} />
+
         </TouchableOpacity>
     )
 }

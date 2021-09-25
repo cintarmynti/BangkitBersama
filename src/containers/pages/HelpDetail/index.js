@@ -1,92 +1,79 @@
-import React from 'react'
-import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
-import Colors from '../../../utils/Colors'
-import {H1, H2, H3, H4, H5, P} from '../../../components/atoms'
-import {RelawanSection, PrimaryButton, OutlineButton} from '../../../components/molecules'
+import React, { useState } from 'react'
+import { Image, ScrollView, StyleSheet, View } from 'react-native'
+import { PrimaryButton, H3, Small } from '../../../components'
+import { Colors } from '../../../utils'
+import UsersIcon from '../../../assets/icon/users.svg'
+import ClockIcon from '../../../assets/icon/clock.svg'
+import { HelpDetailContent, HelpRequests } from '../../templates'
+
+
+const renderButton = (inisiator) => {
+    if (!inisiator) {
+        return (
+            <PrimaryButton style={{ marginBottom: 40 }} title="Ajukan Permintaan" paddingVertical={15} />
+        )
+    }
+
+}
+
+const renderDetail = (inisiator) => {
+    if (!inisiator) {
+        return (
+            <HelpDetailContent />
+        )
+    } else {
+        return (
+            <HelpRequests />
+        )
+    }
+
+}
 
 const HelpDetail = () => {
+
+    const [inisiator] = useState(true)
+
     return (
-
-           <View style={{flexGrow:1 }} backgroundColor={Colors.overlay}>
-               <ScrollView backgroundColor={Colors.overlay}>
-                    {/* Header  */}
-                    <View style={{backgroundColor:'red', width:'100%', height:214}}>
-                        <Image source={require('../../../assets/picture/bantu-bangkit.png') } style={{width:'100%', height:'100%', resizeMode:'cover'}}/>
-                    </View>
-
-                    {/* content  */}
-                <View style={styles.contentDetail} backgroundColor={Colors.overlay}>
-                    {/* Button dan share  */}
-                    <View style={{flexDirection:'row', marginTop:30, justifyContent: 'space-between', alignItems:'center'}}>
-                            <PrimaryButton style={styles.button} title="Ekonomi"/>
-                            <Image source={require('../../../assets/icon/share.png')} style={{width:30, height:30}}/>
-                    </View>
-                    {/* H1 */}
-                    <View>
-                       <H4 title="Bantu Pak Adi Memenuhi Kebutuhan Keluarga" style={{marginTop:24, fontFamily:'Nunito-Bold'}}/>
-                    </View>
-
-                    {/* H2  */}
-                    <View style={{marginTop:16}}>
-                        <P style={{fontFamily:'Nunito-Extrabold'}} title="Berakhir : 21 Oktober 2003" /> 
-                        <P style={{fontFamily:'Nunito-Extrabold'}} title="Penerima : 3 Orang" />     
-                    </View> 
-
-                    {/* Button sama H4  */}
-                    <View>
-                        <PrimaryButton title="Donasi" style={{height:49, marginTop:40}}/>
-                        <H4 title="Inisiator" style={{marginTop:40, fontFamily:'Nunito-Bold'}}/>
-                    </View>
-
-                    {/* Relawan Section  */}
-                    <RelawanSection/>
-
-                    <View>
-                        <H4 title="Deskripsi" style={{marginTop:40, fontFamily:'Nunito-Bold'}}/>
-                        <View style={{ padding:16}}>
-                            <P title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus..." style={{color:Colors.darkGrey}}/>
-                            <P title="Selengkapnya"/>
-                        </View>
-                    </View>
-
-                    <View>
-                    <H4 title="Donatur(78)" style={{marginTop:40, fontFamily:'Nunito-Bold'}}/>
-                    <RelawanSection/>
-                    <RelawanSection/>
-                    </View>
-                    <View style={{alignItems:'center'}}>
-                        <OutlineButton title="Semua"  icon={require('../../../assets/icon/chevron-down.png')} style={{marginTop:24, width:100, height:50, fontSize:8}}/>
-                    </View>
+        <ScrollView style={styles.wrapper}>
+            <View style={styles.cover}>
+                <Image style={{ width: '100%', height: '100%' }} source={require('../../../assets/picture/bantu-bangkit.png')} />
+            </View>
+            <View style={styles.content}>
+                <PrimaryButton style={{ width: 75, height: 35, marginBottom: 24 }} title="Ekonomi" />
+                <H3 title="Bantuan Tunai Untuk Golongan MBR" style={{ marginBottom: 16 }} />
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 8 }}>
+                    <UsersIcon />
+                    <Small style={{ marginLeft: 16 }} title="3 Orang" />
                 </View>
-               </ScrollView>
-               
-           </View>
+                <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 40 }}>
+                    <ClockIcon />
+                    <Small style={{ marginLeft: 16 }} title="21 Hari lagi" />
+                </View>
+                {renderButton(inisiator)}
+                {renderDetail(inisiator)}
+            </View>
+        </ScrollView>
     )
 }
 
 export default HelpDetail
 
 const styles = StyleSheet.create({
-    contentDetail:{
-        position:'relative',
-        marginTop:-36,
-        backgroundColor:'pink',
-        borderTopRightRadius:30,
-        borderTopLeftRadius:30,
-        paddingHorizontal:30
+    wrapper: {
+        position: 'relative',
+        flex: 1,
+        height: '100%',
+        backgroundColor: Colors.overlay
     },
-    button:{
-        width:150,
-        height:40,
-        fontSize:11,
-        borderRadius:10,
-
+    cover: {
+        width: '100%',
+        height: 230,
     },
-    title:{
-        fontSize:24,
-        color: Colors.primary,
-        fontFamily: 'Nunito-Bold',
-        marginTop:24
-    },
- 
+    content: {
+        marginTop: -50,
+        padding: 30,
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        backgroundColor: Colors.overlay
+    }
 })

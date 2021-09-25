@@ -1,15 +1,15 @@
 import React from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import { Colors } from '../../../utils'
-import { P, Sicon } from '../../../components'
+import { P } from '../../../components'
 
 const PrimaryButton = ({ title, style, icon, paddingVertical = 8, onPress }) => {
     {
         if (icon) {
             return (
                 <TouchableOpacity onPress={onPress} style={[styles.wrapper, { paddingVertical: paddingVertical, }, style]}>
-                    <Sicon img={icon} width={15} height={15} style={{ marginRight: 8 }} />
-                    <P title={title} style={style} color="#FFFFFF" />
+                    {icon}
+                    <P title={title} style={[style, { marginLeft: 8 }]} color="#FFFFFF" />
                 </TouchableOpacity>
             )
         } else {

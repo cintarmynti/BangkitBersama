@@ -1,57 +1,57 @@
 import React from 'react'
 import { View, ScrollView } from 'react-native'
-import { H4, CardCoverTop } from '../../../components'
+import { H4, CardTwoSide } from '../../../components'
 
 const HomeScrollContentOne = ({ navigation, style }) => {
     return (
         <View style={style}>
-            <H4 title="Bantu Mereka Bangkit" style={{ marginBottom: 16, paddingHorizontal: 30 }} />
+            <H4 title="Orang-Orang Berhati Baik" style={{ marginBottom: 16, paddingHorizontal: 30 }} />
             <ScrollView
                 horizontal
                 style={{
                     flexDirection: 'row'
                 }}
                 showsHorizontalScrollIndicator={false}>
-                <CardCoverTop
+                <CardTwoSide
                     onPress={() => navigation.navigate('HelpDetail')}
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginLeft: 30, marginRight: 20 }}
+                    imgTop={require('../../../assets/icon/covid.png')}
+                    titleTop="KONSULTASI PASIEN COVID-19 GRATIS"
+                    textTop="Setiap hari. Pukul 10.00 - 13.00 WIB"
+                    imgBottom={require('../../../assets/picture/tirta.png')}
+                    titleBottom="Dr. tirta"
+                    textBottom="Tenaga Kesehatan"
+                    style={{ marginLeft: 30 }} />
+                <CardTwoSide
+                    imgTop={require('../../../assets/icon/covid.png')}
+                    titleTop="KONSULTASI PASIEN COVID-19 GRATIS"
+                    textTop="Setiap hari. Pukul 10.00 - 13.00 WIB"
+                    imgBottom={require('../../../assets/picture/tirta.png')}
+                    titleBottom="Dr. tirta"
+                    textBottom="Tenaga Kesehatan"
                 />
-                <CardCoverTop
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginRight: 20 }}
+                <CardTwoSide
+                    imgTop={require('../../../assets/icon/covid.png')}
+                    titleTop="KONSULTASI PASIEN COVID-19 GRATIS"
+                    textTop="Setiap hari. Pukul 10.00 - 13.00 WIB"
+                    imgBottom={require('../../../assets/picture/tirta.png')}
+                    titleBottom="Dr. tirta"
+                    textBottom="Tenaga Kesehatan"
                 />
-                <CardCoverTop
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginRight: 20 }}
+                <CardTwoSide
+                    imgTop={require('../../../assets/icon/covid.png')}
+                    titleTop="KONSULTASI PASIEN COVID-19 GRATIS"
+                    textTop="Setiap hari. Pukul 10.00 - 13.00 WIB"
+                    imgBottom={require('../../../assets/picture/tirta.png')}
+                    titleBottom="Dr. tirta"
+                    textBottom="Tenaga Kesehatan"
                 />
-                <CardCoverTop
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginRight: 20 }}
-                />
-                <CardCoverTop
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginRight: 20 }}
+                <CardTwoSide
+                    imgTop={require('../../../assets/icon/covid.png')}
+                    titleTop="KONSULTASI PASIEN COVID-19 GRATIS"
+                    textTop="Setiap hari. Pukul 10.00 - 13.00 WIB"
+                    imgBottom={require('../../../assets/picture/tirta.png')}
+                    titleBottom="Dr. tirta"
+                    textBottom="Tenaga Kesehatan"
                 />
             </ScrollView>
         </View>

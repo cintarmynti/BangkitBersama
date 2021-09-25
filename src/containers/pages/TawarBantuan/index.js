@@ -1,19 +1,23 @@
-import React from 'react'
-import { View, ScrollView, Image } from 'react-native'
+import React, { useState } from 'react'
+import { View, ScrollView, Image, TouchableOpacity } from 'react-native'
 import { P, PrimaryButton, H4, OutlineButton, H5, Xsmall } from '../../../components'
 import Colors from '../../../utils/Colors'
-
+import ArrowLeftIcon from '../../../assets/icon/arrow-left.svg'
 
 
 const TawarBantuan = ({ navigation }) => {
+
+
     return (
         <ScrollView style={{ backgroundColor: Colors.overlay }}>
             <View style={{ margin: 30, backgroundColor: Colors.overlay, paddingBottom: 56 }}>
-                <Image source={require('../../../assets/icon/arrow-left.png')} />
+                <TouchableOpacity onPress={() => navigation.navigate('MainPages')}>
+                    <ArrowLeftIcon />
+                </TouchableOpacity>
                 <Image source={require('../../../assets/illustrations/Saly-15.png')} style={{ alignSelf: 'center', marginTop: 40 }} />
                 <P title="Tawarkan Bantuanmu dan Jadilah Inisiator Kebangkitan Bangsa!" style={{ alignSelf: 'center', textAlign: 'center', marginTop: 16 }} />
                 <PrimaryButton onPress={() => navigation.navigate('HelpInput')} title="Tawarkan Sekarang" style={{ paddingVertical: 15, marginTop: 24 }} />
-                <H4 title="Bantuan Kamu" style={{ fontFamily: 'Nunito-Bold', marginTop: 40 }} />
+                <H4 title="Bantuan Kamu" style={{ marginTop: 40 }} />
                 <View style={{
                     flexDirection: 'row',
                     justifyContent: 'space-between',
