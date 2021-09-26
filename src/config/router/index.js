@@ -17,6 +17,7 @@ import {
     TawarBantuan,
     HelpInput
 } from '../../containers/pages'
+import { DetailHelpTabView } from '../../containers/templates'
 import { TabIcon, FeaturesButton, TabItemActive } from '../../components'
 import { Colors } from '../../utils'
 import HeartIcon from '../../assets/icon/heart.svg'

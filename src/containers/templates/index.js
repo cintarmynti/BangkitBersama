@@ -1,9 +1,7 @@
 import OnBoard from './Onboard'
-import HelpDetailContent from './HelpDetailContent'
-import HelpRequests from './HelpRequests'
+import DetailHelpTabView from './DetailHelpTabView'
 
 module.exports = {
     OnBoard,
-    HelpDetailContent,
-    HelpRequests
+    DetailHelpTabView
 }

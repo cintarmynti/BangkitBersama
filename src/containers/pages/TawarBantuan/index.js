@@ -1,9 +1,12 @@
 import React from 'react'
-import { View, ScrollView, Image, StyleSheet } from 'react-native'
+import { View, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import { P, PrimaryButton, H4, OutlineButton, H5, Xsmall } from '../../../components'
 import Colors from '../../../utils/Colors'
 import ArrowLeftIcon from '../../../assets/icon/arrow-left.svg'
 
+import CovidIcon from '../../../assets/icon/covid.svg'
+import EkonomiIcon from '../../../assets/icon/ekonomi.svg'
+import JasaIcon from '../../../assets/icon/jasa.svg'
 
 const TawarBantuan = ({ navigation }) => {
 
@@ -29,7 +32,7 @@ const TawarBantuan = ({ navigation }) => {
                 </View>
 
                 <View style={styles.card}>
-                    <Image source={require('../../../assets/icon/covid.png')} />
+                    <CovidIcon />
                     <View style={{ marginLeft: 16, width: 200 }}>
                         <H5 title="KONSULTASI PASIEN COVID-19 GRATIS" />
                         <Xsmall title="21 Hari lagi" style={{ marginTop: 8 }} />
@@ -37,7 +40,7 @@ const TawarBantuan = ({ navigation }) => {
                 </View>
 
                 <View style={styles.card}>
-                    <Image source={require('../../../assets/icon/ekonomi.png')} />
+                    <EkonomiIcon />
                     <View style={{ marginLeft: 16, width: 200 }}>
                         <H5 title="BANTUAN TUNAI UNTUK GOLONGAN MBR" />
                         <Xsmall title="21 Hari lagi" style={{ marginTop: 8 }} />
@@ -45,7 +48,7 @@ const TawarBantuan = ({ navigation }) => {
                 </View>
 
                 <View style={styles.card}>
-                    <Image source={require('../../../assets/icon/jasa.png')} />
+                    <JasaIcon />
                     <View style={{ marginLeft: 16, width: 200 }}>
                         <H5 title="ANTAR JEMPUT PASIEN COVID PRIBADI" />
                         <Xsmall title="21 Hari lagi" style={{ marginTop: 8 }} />
