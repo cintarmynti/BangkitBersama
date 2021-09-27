@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, ScrollView, Image, StyleSheet } from 'react-native'
+import { View, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import { P, PrimaryButton, H4, OutlineButton, H5, Xsmall } from '../../../components'
 import Colors from '../../../utils/Colors'
 import ArrowLeftIcon from '../../../assets/icon/arrow-left.svg'
