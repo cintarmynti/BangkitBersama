@@ -11,7 +11,7 @@ import HelpDetail from './HelpDetail'
 import TawarBantuan from './TawarBantuan'
 import HelpInput from './HelpInput'
 import ChatRoom from './ChatRoom'
-
+import EditProfile from './EditProfile'
 
 
 module.exports = {
@@ -27,5 +27,6 @@ module.exports = {
     HelpDetail,
     TawarBantuan,
     HelpInput,
-    ChatRoom
+    ChatRoom,
+    EditProfile
 }

@@ -16,7 +16,8 @@ import {
     HelpDetail,
     TawarBantuan,
     HelpInput,
-    ChatRoom
+    ChatRoom,
+    EditProfile
 } from '../../containers/pages'
 import { TabIcon, FeaturesButton, TabItemActive } from '../../components'
 import { Colors } from '../../utils'
@@ -92,6 +93,8 @@ const Router = () => {
                 <Stack.Screen name="TawarBantuan" component={TawarBantuan} />
                 <Stack.Screen name="HelpInput" component={HelpInput} />
                 <Stack.Screen name="ChatRoom" component={ChatRoom} />
+                <Stack.Screen name="EditProfile" component={EditProfile} />
+
 
             </Stack.Navigator>
         </NavigationContainer>
