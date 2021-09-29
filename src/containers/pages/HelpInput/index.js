@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import { View, Text, ScrollView, Image, TextInput, Button, Platform, StyleSheet, TouchableOpacity } from 'react-native'
 import {P, InputText, PrimaryButton} from './../../../components'
 import {Colors} from './../../../utils'
+import CalenderIcon from '../../../assets/icon/calender.svg'
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 const HelpInput = () => {
@@ -40,7 +41,7 @@ const HelpInput = () => {
     showMode('time');
   };
     return (
-    <ScrollView style={{backgroundColor:Colors.background}}>
+    <ScrollView style={{backgroundColor:Colors.overlay}}>
         <View style={{padding:30}}>
             {/* arrow  */}
             <Image source={require('./../../../assets/icon/arrow-left.png')}/>
@@ -111,7 +112,7 @@ const HelpInput = () => {
                     <P title="Tanggal" style={{color:Colors.darkGrey}} />
                         <View style={{backgroundColor: 'white', borderRadius: 15, height: 70, marginTop:10, flexDirection:'row', justifyContent:'space-between', paddingTop:25, paddingHorizontal:20}}>
                             <Text>{text}</Text>
-                            <Image source={require('../../../assets/icon/calender.png')} style={{width:25, height:25}} />
+                           <CalenderIcon strokeWidth={15}  />
                         </View>
                     </TouchableOpacity>
                    

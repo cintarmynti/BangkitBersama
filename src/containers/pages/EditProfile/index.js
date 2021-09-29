@@ -16,13 +16,13 @@ const EditProfile = () => {
     return (
         <View style={{flex:1, backgroundColor:'white'}}>
 
-            <View style={{height: 70, width:'100 %', backgroundColor:Colors.background, flexDirection:'row', justifyContent:'space-between', padding:10}}>
+            <View style={{height: 70, width:'100 %', backgroundColor:Colors.overlay, flexDirection:'row', justifyContent:'space-between', padding:10}}>
                     <Image source={require('../../../assets/icon/arrow-left.png')} />
                     <H3 title="Edit Profile"/>
                     <Image source={require('../../../assets/icon/check.png')} />
             </View>
 
-            <ScrollView  style={{flex:1, backgroundColor:'white', backgroundColor:Colors.background}}>
+            <ScrollView  style={{flex:1, backgroundColor:'white', backgroundColor:Colors.overlay}}>
                 <View style={{paddingHorizontal:30}}>
                     <View>
                         <ProfilePicture img={require('../../../assets/logo/bangkitbersama.png')} style={{width:100, height:100, alignSelf: 'center', marginTop:48}} />
