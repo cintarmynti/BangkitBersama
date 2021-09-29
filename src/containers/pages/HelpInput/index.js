@@ -1,8 +1,9 @@
 import { Picker } from '@react-native-picker/picker'
 import React, {useState} from 'react'
-import { View, Text, ScrollView, Image, TextInput, Modal, StyleSheet } from 'react-native'
+import { View, Text, ScrollView, Image, TextInput, Button, Platform, StyleSheet } from 'react-native'
 import {P, InputText, PrimaryButton} from './../../../components'
 import {Colors} from './../../../utils'
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const HelpInput = () => {
     const [pilihan, setPilihan] = useState();
@@ -10,6 +11,29 @@ const HelpInput = () => {
         alert("kamu pilih hari "+ label);
         setPilihan(label);
     }
+
+    const [date, setDate] = useState(new Date(1598051730000));
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === 'ios');
+    setDate(currentDate);
+  };
+
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
+
+  const showTimepicker = () => {
+    showMode('time');
+  };
     return (
     <ScrollView style={{backgroundColor:Colors.background}}>
         <View style={{padding:30}}>
@@ -76,10 +100,20 @@ const HelpInput = () => {
                     <InputText name="Jumlah Penerima" placeholder="Berapa banyak penerima.." />
                 </View>
 
-                {/* tanggal  */}
                 <View style={{marginTop:24}}>
-                    <InputText name="Tanggal" placeholder="Masukkan tanggal" /> 
+                    <PrimaryButton title="Pilih tanggal" onPress={showDatepicker} />
                 </View>
+                {show && (
+                    <DateTimePicker
+                    testID="dateTimePicker"
+                    value={date}
+                    mode={mode}
+                    is24Hour={true}
+                    display="default"
+                    onChange={onChange}
+                    />
+                )}
+                
                 
                 <PrimaryButton title="Tawarkan" style={{marginTop:40, marginBottom:32, height:59}} />
             </View>
