@@ -1,6 +1,6 @@
 import { Picker } from '@react-native-picker/picker'
 import React, {useState} from 'react'
-import { View, Text, ScrollView, Image, TextInput, Button, Platform, StyleSheet } from 'react-native'
+import { View, Text, ScrollView, Image, TextInput, Button, Platform, StyleSheet, TouchableOpacity } from 'react-native'
 import {P, InputText, PrimaryButton} from './../../../components'
 import {Colors} from './../../../utils'
 import DateTimePicker from '@react-native-community/datetimepicker';
@@ -12,14 +12,19 @@ const HelpInput = () => {
         setPilihan(label);
     }
 
-    const [date, setDate] = useState(new Date(1598051730000));
+    const [date, setDate] = useState(new Date());
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
+  const [text, setText] = useState('Empety');
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
     setDate(currentDate);
+
+    let tempDate = new Date(currentDate);
+    let fDate = tempDate.getDate()+ '/' + (tempDate.getMonth() + '/' + tempDate.getFullYear());
+    setText(fDate);
   };
 
   const showMode = (currentMode) => {
@@ -101,15 +106,24 @@ const HelpInput = () => {
                 </View>
 
                 <View style={{marginTop:24}}>
-                    <PrimaryButton title="Pilih tanggal" onPress={showDatepicker} />
+                    <P/>
+                    <TouchableOpacity onPress={showDatepicker}>
+                    <P title="Tanggal" style={{color:Colors.darkGrey}} />
+                        <View style={{backgroundColor: 'white', borderRadius: 15, height: 70, marginTop:10, flexDirection:'row', justifyContent:'space-between', paddingTop:25, paddingHorizontal:20}}>
+                            <Text>{text}</Text>
+                            <Image source={require('../../../assets/icon/calender.png')} style={{width:25, height:25}} />
+                        </View>
+                    </TouchableOpacity>
+                   
                 </View>
+              
                 {show && (
                     <DateTimePicker
                     testID="dateTimePicker"
                     value={date}
                     mode={mode}
                     is24Hour={true}
-                    display="default"
+                    display='default'
                     onChange={onChange}
                     />
                 )}
