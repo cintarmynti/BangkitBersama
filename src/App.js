@@ -1,9 +1,12 @@
 import React from 'react'
-import { Router } from './config'
+import { Router, store } from './config'
+import { Provider } from 'react-redux'
 
 const App = () => {
   return (
-    <Router />
+    <Provider store={store}>
+      <Router />
+    </Provider>
   )
 }
 

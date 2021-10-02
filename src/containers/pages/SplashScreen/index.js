@@ -6,7 +6,7 @@ import { Colors } from '../../../utils'
 import { AppLogo, H2, DoubleCircle } from '../../../components'
 
 const SplashScreen = ({ navigation }) => {
-    const [nextPage, setNextPage] = useState('')
+    const [nextPage, setNextPage] = useState()
 
     useEffect(async () => {
         await AsyncStorage.getItem('isFirtsLaunch')
