@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import { BASE_API_URL } from '../..'
+import { BASE_API_URL } from '../../../config'
 import { StackActions } from '@react-navigation/native'
 
 const HandleLogin = (data, navigation) => async dispatch => {

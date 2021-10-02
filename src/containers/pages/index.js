@@ -10,6 +10,9 @@ import Register from './Register'
 import HelpDetail from './HelpDetail'
 import TawarBantuan from './TawarBantuan'
 import HelpInput from './HelpInput'
+import ChatRoom from './ChatRoom'
+import EditProfile from './EditProfile'
+
 
 module.exports = {
     Home,
@@ -23,5 +26,7 @@ module.exports = {
     Register,
     HelpDetail,
     TawarBantuan,
-    HelpInput
+    HelpInput,
+    ChatRoom,
+    EditProfile
 }

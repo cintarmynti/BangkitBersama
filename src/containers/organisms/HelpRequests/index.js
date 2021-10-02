@@ -1,11 +1,14 @@
 import React from 'react'
-import { StyleSheet, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import { ProfilePicture, P, Small } from '../../../components'
+import { StackActions } from '@react-navigation/native'
 import ChatIcon from '../../../assets/icon/chat-2.svg'
 import CheckIcon from '../../../assets/icon/check.svg'
 import { Colors } from '../../../utils'
+import { useNavigation } from '@react-navigation/native';
 
 const HelpRequests = () => {
+    const navigation = useNavigation(); 
     return (
         <View>
             <View style={{
@@ -31,7 +34,9 @@ const HelpRequests = () => {
                         right: 16
                     }}>
                         <CheckIcon />
-                        <ChatIcon style={{ marginLeft: 24 }} />
+                        <TouchableOpacity onPress={() => navigation.navigate('ChatRoom')}>
+                            <ChatIcon style={{ marginLeft: 24 }} />
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <P color={Colors.darkGrey} title="Saya butuh uang buat makan" />
@@ -59,7 +64,9 @@ const HelpRequests = () => {
                         right: 16
                     }}>
                         <CheckIcon />
-                        <ChatIcon style={{ marginLeft: 24 }} />
+                       <TouchableOpacity>
+                            <ChatIcon style={{ marginLeft: 24 }} />
+                        </TouchableOpacity> 
                     </View>
                 </View>
                 <P color={Colors.darkGrey} title="Saya butuh uang buat makan" />

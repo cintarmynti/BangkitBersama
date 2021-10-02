@@ -15,7 +15,9 @@ import {
     Register,
     HelpDetail,
     TawarBantuan,
-    HelpInput
+    HelpInput,
+    ChatRoom,
+    EditProfile
 } from '../../containers/pages'
 import { DetailHelpTabView } from '../../containers/templates'
 import { TabIcon, FeaturesButton, TabItemActive } from '../../components'
@@ -91,6 +93,9 @@ const Router = () => {
                 <Stack.Screen name="HelpDetail" component={HelpDetail} />
                 <Stack.Screen name="TawarBantuan" component={TawarBantuan} />
                 <Stack.Screen name="HelpInput" component={HelpInput} />
+                <Stack.Screen name="ChatRoom" component={ChatRoom} />
+                <Stack.Screen name="EditProfile" component={EditProfile} />
+
 
             </Stack.Navigator>
         </NavigationContainer>
