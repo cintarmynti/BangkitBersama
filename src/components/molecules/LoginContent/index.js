@@ -32,7 +32,7 @@ const LoginContent = ({ navigation }) => {
     }
 
     return (
-        <View style={{ position: 'relative', flex: 1, borderTopRightRadius: 30, borderTopLeftRadius: 30, paddingHorizontal: 30, paddingVertical: 40 }} backgroundColor={Colors.overlay}>
+        <View style={{ position: 'relative', flex: 1, borderTopRightRadius: 30, borderTopLeftRadius: 30, paddingHorizontal: 30, paddingTop: 40, paddingBottom: '40%' }} backgroundColor={Colors.overlay}>
             <Text style={{ marginBottom: 10, fontSize: 28, fontWeight: 'normal', fontFamily: 'Nunito-Bold' }} color={Colors.monoBlack}>Masuk</Text>
             <AlertDanger text={LoginReducer.alertText} set={LoginReducer.setAlert} onPress={() => { dispatch({ type: 'SET_ALERT_LOGIN', value: false }) }} />
             <InputText value={LoginReducer.form.email} onChangeText={value => changeInputValue(value, 'email')} style={{ paddingTop: 24 }} placeholder="Email" name="Email" />

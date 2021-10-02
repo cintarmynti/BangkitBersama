@@ -7,7 +7,7 @@ import LoginContent from '../../../components/molecules/LoginContent'
 const Login = ({ navigation }) => {
 
     return (
-        <ScrollView style={{ flex: 1 }} backgroundColor={Colors.primary}>
+        <ScrollView backgroundColor={Colors.primary}>
 
             {/* HeaderLogin  */}
             <HeaderLogin />
@@ -21,4 +21,3 @@ const Login = ({ navigation }) => {
 
 export default Login
 
-const styles = StyleSheet.create({})
