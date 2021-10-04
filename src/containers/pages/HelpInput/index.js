@@ -1,12 +1,18 @@
 import { Picker } from '@react-native-picker/picker'
 import React, { useState } from 'react'
-import { View, ScrollView, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, ScrollView, Image, TextInput, StyleSheet, TouchableOpacity,Text } from 'react-native'
 import { StackActions } from '@react-navigation/native'
 import { P, InputText, PrimaryButton, H4 } from './../../../components'
 import { Colors } from './../../../utils'
 import ArrowLeftIcon from '../../../assets/icon/arrow-left.svg'
 import CheckIcon from '../../../assets/icon/check-2.svg'
 import ComputerIllustration from '../../../assets/illustrations/computer.svg'
+import CalenderIcon from '../../../assets/icon/calender.svg'
+import DateTimePicker from '@react-native-community/datetimepicker';
+
+
+
+
 
 const HelpInput = ({ navigation }) => {
     const [pilihan, setPilihan] = useState();
@@ -30,6 +36,32 @@ const HelpInput = ({ navigation }) => {
             return (<P title="Proses" />)
         }
     }
+
+    const [date, setDate] = useState(new Date());
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+  const [text, setText] = useState('Empety');
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(Platform.OS === 'ios');
+    setDate(currentDate);
+
+    let tempDate = new Date(currentDate);
+    let fDate = tempDate.getDate()+ '/' + (tempDate.getMonth() + '/' + tempDate.getFullYear());
+    setText(fDate);
+  };
+
+  const showMode = (currentMode) => {
+    setShow(true);
+    setMode(currentMode);
+  };
+
+  const showDatepicker = () => {
+    showMode('date');
+  };
+
+
 
     const renderContent = (step, pilihan, navigation) => {
         switch (step) {
@@ -76,10 +108,29 @@ const HelpInput = ({ navigation }) => {
                             <InputText name="Jumlah Penerima" placeholder="Berapa banyak penerima.." />
                         </View >
 
-                        {/* tanggal  */}
-                        < View style={{ marginTop: 24 }}>
-                            <InputText name="Tanggal" placeholder="Masukkan tanggal" />
-                        </View >
+                        <View style={{marginTop:24}}>
+                        <P/>
+                        <TouchableOpacity onPress={showDatepicker}>
+                        <P title="Tanggal" style={{color:Colors.darkGrey}} />
+                            <View style={{backgroundColor: 'white', borderRadius: 15, height: 70, marginTop:10, flexDirection:'row', justifyContent:'space-between', paddingTop:25, paddingHorizontal:20}}>
+                                <Text>{text}</Text>
+                            <CalenderIcon strokeWidth={15}  />
+                            </View>
+                        </TouchableOpacity>
+                   
+                        </View>
+              
+                        {show && (
+                            <DateTimePicker
+                            testID="dateTimePicker"
+                            value={date}
+                            mode={mode}
+                            is24Hour={true}
+                            display='default'
+                            onChange={onChange}
+                            />
+                        )}
+                
 
                         <PrimaryButton onPress={() => setStep(2)} title="Tawarkan" style={{ marginTop: 40, marginBottom: 32, height: 59 }} />
                     </View >)
