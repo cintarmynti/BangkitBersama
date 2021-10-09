@@ -22,7 +22,7 @@ const HelpDetailContent = () => {
                     justifyContent: 'space-between'
                 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <ProfilePicture img={require('../../../assets/picture/tirta.png')} />
+                        <ProfilePicture img={''} />
                         <View style={{ marginLeft: 16 }}>
                             <View style={{ flexDirection: 'row' }}>
                                 <Small title="Arya Rizky" style={{ marginBottom: 8, marginRight: 9 }} />
@@ -60,7 +60,7 @@ const HelpDetailContent = () => {
                     alignItems: 'center',
                     marginBottom: 20
                 }}>
-                    <ProfilePicture img={require('../../../assets/picture/tirta.png')} />
+                    <ProfilePicture img={''} />
                     <View style={{ marginLeft: 16 }}>
                         <Small title="Arya Rizky" style={{ marginBottom: 8 }} />
                         <Small title="2 jam lalu" color={Colors.grey} />
@@ -80,7 +80,7 @@ const HelpDetailContent = () => {
                     alignItems: 'center',
                     marginBottom: 20
                 }}>
-                    <ProfilePicture img={require('../../../assets/picture/tirta.png')} />
+                    <ProfilePicture img={''} />
                     <View style={{ marginLeft: 16 }}>
                         <Small title="Arya Rizky" style={{ marginBottom: 8 }} />
                         <Small title="2 jam lalu" color={Colors.grey} />

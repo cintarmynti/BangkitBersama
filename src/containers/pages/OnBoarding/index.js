@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import { StackActions } from '@react-navigation/native'
 import { StyleSheet, View, Dimensions } from 'react-native'
 import Carousel, { Pagination } from 'react-native-snap-carousel';
-import { Colors, Slides } from '../../../utils'
+import { Colors, Slides, Async } from '../../../utils'
 import { CircleLinearButton, LinearButton } from '../../../components'
 import { OnBoard } from '../../templates';
 
@@ -49,7 +48,7 @@ const setButton = ({ navigation, activeSlide, setActiveSlide }) => {
 
     } else {
         return <LinearButton onPress={() => {
-            AsyncStorage.setItem('isFirtsLaunch', 'true')
+            Async.set('isFirtsLaunch', 'true')
             navigation.dispatch(StackActions.replace('Auth'))
         }} style={{ marginBottom: 40 }} nextLabel={false} width={206} paddingVertical={15} title="Selanjutnya" />
     }

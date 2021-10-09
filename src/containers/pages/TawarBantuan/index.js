@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native'
-import { P, PrimaryButton, H4, OutlineButton, H5, Xsmall } from '../../../components'
+import { P, PrimaryButton, H4, OutlineButton, H5, Xsmall, AlertWarning } from '../../../components'
 import Colors from '../../../utils/Colors'
 import ArrowLeftIcon from '../../../assets/icon/arrow-left.svg'
 
@@ -8,18 +8,11 @@ import CovidIcon from '../../../assets/icon/covid.svg'
 import EkonomiIcon from '../../../assets/icon/ekonomi.svg'
 import JasaIcon from '../../../assets/icon/jasa.svg'
 
-const TawarBantuan = ({ navigation }) => {
-
-
-    return (
-        <ScrollView style={{ backgroundColor: Colors.overlay }}>
-            <View style={{ margin: 30, backgroundColor: Colors.overlay, paddingBottom: 56 }}>
-                <TouchableOpacity onPress={() => navigation.navigate('MainPages')}>
-                    <ArrowLeftIcon />
-                </TouchableOpacity>
-                <Image source={require('../../../assets/illustrations/Saly-15.png')} style={{ alignSelf: 'center', marginTop: 40 }} />
-                <P title="Tawarkan Bantuanmu dan Jadilah Inisiator Kebangkitan Bangsa!" style={{ alignSelf: 'center', textAlign: 'center', marginTop: 16 }} />
-                <PrimaryButton onPress={() => navigation.navigate('HelpInput')} title="Tawarkan Sekarang" style={{ paddingVertical: 15, marginTop: 24 }} />
+const renderContent = (is_verified) => {
+    if (is_verified) {
+        return (
+            <>
+                <PrimaryButton onPress={() => navigation.navigate('HelpInput')} title="Tawarkan Sekarang" style={{ paddingVertical: 15 }} />
                 <H4 title="Bantuan Kamu" style={{ marginTop: 40 }} />
                 <View style={{
                     flexDirection: 'row',
@@ -53,8 +46,28 @@ const TawarBantuan = ({ navigation }) => {
                         <H5 title="ANTAR JEMPUT PASIEN COVID PRIBADI" />
                         <Xsmall title="21 Hari lagi" style={{ marginTop: 8 }} />
                     </View>
-                </View>
+                </View></>
+        )
+    } else {
+        return (
+            <AlertWarning text="Anda Belum Terverifikasi" />
+        )
+    }
+}
 
+const TawarBantuan = ({ navigation }) => {
+
+
+    return (
+        <ScrollView style={{ backgroundColor: Colors.overlay }}>
+            <View style={{ margin: 30, backgroundColor: Colors.overlay, paddingBottom: 56 }}>
+                <TouchableOpacity onPress={() => navigation.navigate('MainPages')}>
+                    <ArrowLeftIcon />
+                </TouchableOpacity>
+                <Image source={require('../../../assets/illustrations/Saly-15.png')} style={{ alignSelf: 'center', marginTop: 40 }} />
+                <P title="Tawarkan Bantuanmu dan Jadilah Inisiator Kebangkitan Bangsa!" style={{ alignSelf: 'center', textAlign: 'center', marginTop: 16, marginBottom: 24 }} />
+
+                {renderContent(false)}
             </View>
 
         </ScrollView >

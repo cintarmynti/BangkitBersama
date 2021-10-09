@@ -1,8 +1,7 @@
 import React from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
+import { ScrollView } from 'react-native'
 import Colors from '../../../utils/Colors'
-import HeaderLogin from '../../../components/molecules/HeaderLogin'
-import LoginContent from '../../../components/molecules/LoginContent'
+import { HeaderLogin, LoginContent } from '../../../components'
 
 const Login = ({ navigation }) => {
 

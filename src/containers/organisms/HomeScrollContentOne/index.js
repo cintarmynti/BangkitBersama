@@ -14,6 +14,7 @@ const HomeScrollContentOne = ({ navigation, style }) => {
                 showsHorizontalScrollIndicator={false}>
                 <CardTwoSide
                     onPress={() => navigation.navigate('HelpDetail')}
+                    onPressChat={() => navigation.navigate('ChatRoom')}
                     imgTop={require('../../../assets/icon/covid.png')}
                     titleTop="KONSULTASI PASIEN COVID-19 GRATIS"
                     textTop="Setiap hari. Pukul 10.00 - 13.00 WIB"

@@ -1,14 +1,13 @@
 import React from 'react'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { TouchableOpacity, View } from 'react-native'
 import { ProfilePicture, P, Small } from '../../../components'
-import { StackActions } from '@react-navigation/native'
 import ChatIcon from '../../../assets/icon/chat-2.svg'
 import CheckIcon from '../../../assets/icon/check.svg'
 import { Colors } from '../../../utils'
 import { useNavigation } from '@react-navigation/native';
 
 const HelpRequests = () => {
-    const navigation = useNavigation(); 
+    const navigation = useNavigation();
     return (
         <View>
             <View style={{
@@ -23,7 +22,7 @@ const HelpRequests = () => {
                     alignItems: 'center',
                     marginBottom: 20
                 }}>
-                    <ProfilePicture img={require('../../../assets/picture/tirta.png')} />
+                    <ProfilePicture img={''} />
                     <View style={{ marginLeft: 16 }}>
                         <Small title="Arya Rizky" style={{ marginBottom: 8 }} />
                         <Small title="2 jam lalu" color={Colors.grey} />
@@ -53,7 +52,7 @@ const HelpRequests = () => {
                     alignItems: 'center',
                     marginBottom: 20
                 }}>
-                    <ProfilePicture img={require('../../../assets/picture/tirta.png')} />
+                    <ProfilePicture img={''} />
                     <View style={{ marginLeft: 16 }}>
                         <Small title="Arya Rizky" style={{ marginBottom: 8 }} />
                         <Small title="2 jam lalu" color={Colors.grey} />
@@ -64,9 +63,9 @@ const HelpRequests = () => {
                         right: 16
                     }}>
                         <CheckIcon />
-                       <TouchableOpacity>
+                        <TouchableOpacity>
                             <ChatIcon style={{ marginLeft: 24 }} />
-                        </TouchableOpacity> 
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <P color={Colors.darkGrey} title="Saya butuh uang buat makan" />
@@ -79,4 +78,3 @@ const HelpRequests = () => {
 
 export default HelpRequests
 
-const styles = StyleSheet.create({})

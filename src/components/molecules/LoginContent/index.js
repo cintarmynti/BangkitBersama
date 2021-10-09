@@ -1,11 +1,9 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import { StackActions } from '@react-navigation/native'
 import PrimaryButton from '../PrimaryButton'
 import InputText from '../InputText'
 import { Small, AlertDanger } from '../../../components'
-import Colors from '../../../utils/Colors'
+import { Colors } from '../../../utils'
 import { useDispatch, useSelector } from 'react-redux'
 import { SetFormLogin, HandleLogin } from '../../../config/redux/action'
 

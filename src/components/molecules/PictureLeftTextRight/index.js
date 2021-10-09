@@ -6,7 +6,7 @@ import { Small, Xsmall, ProfilePicture } from '../..'
 const PictureLeftTextRight = ({ style, title, text, img }) => {
     return (
         <View style={[styles.wrapper, style]}>
-            <ProfilePicture img={img} style={{ marginRight: 16 }} />
+            <ProfilePicture img={''} style={{ marginRight: 16 }} />
             <View style={{ width: 155 }}>
                 <Small title={title} style={{ marginBottom: 8 }} />
                 <Xsmall title={text} color={Colors.grey} />

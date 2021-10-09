@@ -1,7 +1,6 @@
 import React from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
-import { Colors } from '../../../utils'
-import AsyncStorage from '@react-native-async-storage/async-storage'
+import { Colors, Async } from '../../../utils'
 import { StackActions } from '@react-navigation/native'
 import { HeaderProfile, H3, OutlineButton } from '../../../components'
 import { ProfileMenuList } from '../../organisms'
@@ -15,7 +14,9 @@ const Profile = ({ navigation }) => {
                 <ProfileMenuList />
                 <H3 title="Akun" style={{ marginBottom: 32 }} />
                 <OutlineButton onPress={() => {
-                    AsyncStorage.removeItem('isLogged')
+                    Async.remove('isLogged')
+                    Async.remove('user')
+                    Async.remove('token')
                     navigation.dispatch(StackActions.replace('Auth'))
                 }} title="Keluar" paddingVertical={20} />
             </View>

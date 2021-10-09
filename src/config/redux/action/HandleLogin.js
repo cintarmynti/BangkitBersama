@@ -1,12 +1,17 @@
 import Axios from 'axios'
 import { BASE_API_URL } from '../../../config'
+import { Async } from '../../../utils'
 import { StackActions } from '@react-navigation/native'
 
 const HandleLogin = (data, navigation) => async dispatch => {
     await Axios.post(BASE_API_URL + 'login', data)
         .then(res => {
             const meta = res.data.meta;
+            const data = res.data.data;
             if (meta.code == 200) {
+                Async.set('user', data);
+
+
                 navigation.dispatch(StackActions.replace('MainPages'))
             } else {
                 dispatch({ type: 'SET_ALERT_TEXT_LOGIN', value: 'Email/Password salah' })

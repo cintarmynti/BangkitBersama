@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
 import { P } from '../../../components'
-import DangerIcon from '../../../assets/icon/alert-danger.svg'
+import DangerIcon from '../../../assets/icon/danger.svg'
 import CrossIcon from '../../../assets/icon/cross.svg'
 
 const AlertDanger = ({ text, set, onPress }) => {

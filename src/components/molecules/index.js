@@ -18,6 +18,7 @@ import InputText from './InputText'
 import HeaderLogin from './HeaderLogin'
 import LoginContent from './LoginContent'
 import AlertDanger from './AlertDanger'
+import AlertWarning from './AlertWarning'
 
 module.exports = {
     FeaturesButton,
@@ -39,5 +40,6 @@ module.exports = {
     InputText,
     HeaderLogin,
     LoginContent,
-    AlertDanger
+    AlertDanger,
+    AlertWarning
 }
