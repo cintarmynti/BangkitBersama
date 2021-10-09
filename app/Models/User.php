@@ -21,9 +21,9 @@ class User extends Authenticatable
         'username',
         'address',
         'email',
+        'profession',
         'password',
-        'id_card',
-        'contact'
+        'document'
     ];
 
     /**
@@ -37,11 +37,11 @@ class User extends Authenticatable
 
     public function getPhotoAttribute($value)
     {
-        return url('storage/' . $value);
+        return url('storage/app/public/' . $value);
     }
 
-    public function getIdCardAttribute($value)
+    public function getDocumentAttribute($value)
     {
-        return url('storage/' . $value);
+        return url('storage/app/public/' . $value);
     }
 }

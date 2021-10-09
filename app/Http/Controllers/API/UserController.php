@@ -75,12 +75,11 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $query = User::where('id', $user->id);
-        $input = request()->except('c_password');
-        $input['password'] = bcrypt($input['password']);
+        $input = request()->all();
 
         $user = $query->update($input);
         $user =  $query->get();
 
-        return ResponseFormatter::success('User Update Success!', $user);
+        return ResponseFormatter::success('User Update Profile Success!', $user);
     }
 }
