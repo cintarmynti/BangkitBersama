@@ -29,7 +29,11 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('/user', UserController::class);
+    Route::resource('/help', HelpController::class);
+    Route::put('/user/verified', [UserController::class, 'verified'])->name('user.verified');
+    Route::put('/user/unverified', [UserController::class, 'unverified'])->name('user.unverified');
+    Route::get('/user/{user:id}', [UserController::class, 'detail'])->name('user.detail');
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
 
     Route::get('/covid', [CovidController::class, 'covid_index'])->name('help.covid');
     Route::post('/covid/{id}/pending', [CovidController::class, 'setPendingCovid'])->name('covid.pending');

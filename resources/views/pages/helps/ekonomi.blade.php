@@ -37,15 +37,21 @@
                       <td>{{$ekonomi -> quota}}</td>
                       <td>{{$ekonomi -> end_date}}</td>
                       <td>
-                        <button class="btn  btn-warning" data-toggle="modal" data-target="#pendingleModal" type="submit">
+                        <button class="btn @if ($ekonomi->help_status_id==1)
+                            hidden
+                        @endif btn-warning" data-toggle="modal" data-target="#pendingleModal" type="submit">
                             <i class="ft-clock"></i>
                         </button>
 
-                        <button class="btn btn-success" data-toggle="modal" data-target="#accModal" type="submit">
+                        <button class="btn @if ($ekonomi->help_status_id==2)
+                            hidden
+                        @endif btn-success" data-toggle="modal" data-target="#accModal" type="submit">
                             <i class="ft-check-square"></i>
                         </button>
 
-                        <button class="btn btn-danger" data-toggle="modal" data-target="#rejectedModal" type="submit">
+                        <button class="btn @if ($ekonomi->help_status_id==3)
+                            hidden
+                        @endif btn-danger" data-toggle="modal" data-target="#rejectedModal" type="submit">
                             <i class="ft-x-square"></i>
                         </button>
                         <a href="{{route('ekonomi.detail', $ekonomi->id)}}" class="btn btn-info">
