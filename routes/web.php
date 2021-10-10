@@ -22,17 +22,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('/help', HelpController::class);
-    Route::resource('/user', UserController::class);
+    Route::put('/user/verified', [UserController::class, 'verified'])->name('user.verified');
+    Route::put('/user/unverified', [UserController::class, 'unverified'])->name('user.unverified');
+    Route::get('/user/{user:id}', [UserController::class, 'detail'])->name('user.detail');
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
     Route::get('/covid', [HelpController::class, 'covid_index'])->name('help.covid');
     Route::get('/ekonomi', [HelpController::class, 'ekonomi_index'])->name('help.ekonomi');
     Route::get('/pangan', [HelpController::class, 'pangan_index'])->name('help.pangan');
     Route::get('/jasa', [HelpController::class, 'jasa_index'])->name('help.jasa');
-
-
-
 });
