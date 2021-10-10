@@ -22,7 +22,7 @@ class Helps extends Migration
             $table->longText('description');
             $table->integer('quota');
             $table->timestamp('end_date');
-            $table->integer('hellp_status_id')->default(1);
+            $table->integer('help_status_id')->default(1);
             $table->timestamps();
         });
     }
