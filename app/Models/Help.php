@@ -4,27 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\User;
+use App\Models\HelpCategory;
+use App\Models\HelpStatus;
 class Help extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name'];
+    protected $fillable = ['id', 'help_category_id', 'user_id', 'name', 'description', 'quota', 'end_date', 'help_status_id'];
 
-    public function getHelpCategory(){
-        //dalam tabel help memiliki banyak properti dari HelpCategory
-        return $this->hasMany('App\Models\HelpCategory', 'id', 'Help_category_id');
+
+    public function user(){
+
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 
-    public function getHelpReview(){
-        //tiap orang review 1 kali
-        return $this->hasOne('App\Models\HelpReview', 'help_id', 'id');
+    public function category(){
+        return $this->hasOne(HelpCategory::class, 'id', 'help_category_id' );
     }
 
-    public function getUserRelation(){
-        //ngambil user dari user utama 1
-        return $this->belongsTo('App\Models\User', 'id', 'user_id');
+    public function status(){
+        return $this->hasOne(HelpStatus::class, 'id', 'help_status_id');
     }
-
 
 }

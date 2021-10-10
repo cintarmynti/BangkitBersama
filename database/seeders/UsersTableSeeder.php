@@ -63,5 +63,15 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('password123'),
             'user_status_id' => 2
         ]);
+
+        User::create([
+            'role_id' => 2,
+            'name' => 'khansa nabila',
+            'username' => 'sasa',
+            'address' => 'Malang, Jawa Timur',
+            'email' => 'sasa@gmail.com',
+            'password' => bcrypt('password123'),
+            'user_status_id' => 2
+        ]);
     }
 }

@@ -7,6 +7,12 @@
     <div class="row">
       <div class="col-12">
         <div class="card">
+            @if ($message = Session::get('success'))
+            <div class="alert bg-success alert-dismissible mb-2">
+              <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>{{ $message }}</strong>
+            </div>
+          @endif
           <div class="card-header">
             <h4 class="card-title">Tabel Ekonomi</h4>
             <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
@@ -24,69 +30,30 @@
                     </tr>
                   </thead>
                   <tbody>
+                    @foreach ($data_ekonomi as $ekonomi)
                     <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
+                      <td>{{$ekonomi -> name}}</td>
+                      <td>{{$ekonomi -> user->name}}</td>
+                      <td>{{$ekonomi -> quota}}</td>
+                      <td>{{$ekonomi -> end_date}}</td>
+                      <td>
+                        <button class="btn  btn-warning" data-toggle="modal" data-target="#pendingleModal" type="submit">
+                            <i class="ft-clock"></i>
+                        </button>
+
+                        <button class="btn btn-success" data-toggle="modal" data-target="#accModal" type="submit">
+                            <i class="ft-check-square"></i>
+                        </button>
+
+                        <button class="btn btn-danger" data-toggle="modal" data-target="#rejectedModal" type="submit">
+                            <i class="ft-x-square"></i>
+                        </button>
+                        <a href="{{route('ekonomi.detail', $ekonomi->id)}}" class="btn btn-info">
+                            <i class="ft-eye"></i>
+                        </a>
+                      </td>
                     </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>63</td>
-                      <td>2011/07/25</td>
-                      <td>$170,750</td>
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td>$86,000</td>
-                    </tr>
-                    <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>22</td>
-                      <td>2012/03/29</td>
-                      <td>$433,060</td>
-                    </tr>
-                    <tr>
-                      <td>Airi Satou</td>
-                      <td>Accountant</td>
-                      <td>33</td>
-                      <td>2008/11/28</td>
-                      <td>$162,700</td>
-                    </tr>
-                    <tr>
-                      <td>Brielle Williamson</td>
-                      <td>Integration Specialist</td>
-                      <td>61</td>
-                      <td>2012/12/02</td>
-                      <td>$372,000</td>
-                    </tr>
-                    <tr>
-                      <td>Herrod Chandler</td>
-                      <td>Sales Assistant</td>
-                      <td>59</td>
-                      <td>2012/08/06</td>
-                      <td>$137,500</td>
-                    </tr>
-                    <tr>
-                      <td>Rhona Davidson</td>
-                      <td>Integration Specialist</td>
-                      <td>55</td>
-                      <td>2010/10/14</td>
-                      <td>$327,900</td>
-                    </tr>
-                    <tr>
-                      <td>Colleen Hurst</td>
-                      <td>Javascript Developer</td>
-                      <td>39</td>
-                      <td>2009/09/15</td>
-                      <td>$205,500</td>
-                    </tr>
+                    @endforeach
                   </tbody>
 
                     </table>
@@ -94,6 +61,107 @@
            </div>
         </div>
       </div>
+    </div>
+
+    <div class="modal fade" id="pendingleModal" tabindex="-1" role="dialog" aria-labelledby="pendingleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h2 class="modal-title" id="pendingleModalLabel">Ubah status Jadi Pending?</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-capitalize">
+                    {{$ekonomi -> name}}
+                </h3>
+                <h3 class="text-capitalize">
+                    {{$ekonomi -> user -> name}}
+                </h3>
+
+                <div class="d-flex">
+
+                    <form action="/ekonomi/{{$ekonomi->id}}/pending" method="post">
+                        @csrf
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-warning" type="submit">
+                            Set Pending
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+      <!--Accepted Modal -->
+      <div class="modal fade" id="accModal" tabindex="-1" role="dialog" aria-labelledby="accModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h2 class="modal-title" id="accModalLabel">Ubah status Jadi Accepted?</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-capitalize">
+                    {{$ekonomi -> name}}
+                </h3>
+                <h3 class="text-capitalize">
+                    {{$ekonomi -> user -> name}}
+                </h3>
+
+                <div class="d-flex">
+
+                    <form action="/ekonomi/{{$ekonomi->id}}/accepted" method="post">
+                        @csrf
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-success" type="submit">
+                            Set Accepted
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="rejectedModal" tabindex="-1" role="dialog" aria-labelledby="rejectedModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h2 class="modal-title" id="rejectedModalLabel">Ubah status Jadi Rejected?</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-capitalize">
+                    {{$ekonomi -> name}}
+                </h3>
+                <h3 class="text-capitalize">
+                    {{$ekonomi -> user -> name}}
+                </h3>
+
+                <div class="d-flex">
+
+                    <form action="/ekonomi/{{$ekonomi->id}}/rejected" method="post">
+                        @csrf
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-danger" type="submit">
+                            Set Rejected
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        </div>
     </div>
   </section>
 @endsection

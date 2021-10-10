@@ -13,6 +13,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('app-assets/images/logo/bangkit-bersama.png')}}">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
   rel="stylesheet">
+
   <!-- BEGIN VENDOR CSS-->
     @include('includes.style')
   <!-- END Custom CSS-->
@@ -32,6 +33,9 @@ data-open="click" data-menu="vertical-menu" data-col="2-columns">
     </div>
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/js/bootsrap.min.js"></script>
+  @push('script');
   {{-- footer --}}
   @include('includes.footer')
   <!-- BEGIN VENDOR JS-->
