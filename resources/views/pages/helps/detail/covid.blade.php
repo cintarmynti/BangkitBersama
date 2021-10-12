@@ -5,70 +5,60 @@
 @push('style')
     <style>
         .font-size {
-            font-size: 16px;
+           font-size: 16px;
+        }
+
+        .tinggi{
+            height: 60px;
         }
 
     </style>
 @endpush
 
 @section('content')
-    <section id="configuration">
-        <div class="row match-height">
-            <div class="col-xl-6 col-lg-12">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <h4 class="card-title">{{ $data_covid->user->name }}</h4>
-                        <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div id="area-chart" class="height-280">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <p class="font-size">Judul </p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="text-capitalize">: {{ $data_covid->name }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <p class="font-size">Category </p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="text-capitalize">: {{ $category->category->name }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <p class="font-size">status</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>: {{ $status->status->name }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-3">
-                                        <p class="font-size">deskripsi</p>
-                                    </div>
-                                    <div class="col-8">
-                                        <p>: {{ $data_covid->description }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-12">
-                <div class="card">
-                    <div class="card-header border-0">
-
-                    </div>
-                </div>
-            </div>
-
-
+<section id="description" class="card">
+    <div class="card-header">
+      <h4 class="card-title"><p>{{ $data_covid->user->name }}</p></h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <div class="card-text">
+            <table class="table table-column">
+                <tr class="tinggi ">
+                    <td class="col-md-6"><p class="font-size">Judul</p></td>
+                    <td class="col-md-6"><p class="font-size text-capitalize">{{ $data_covid->name }}</p></td>
+                </tr>
+                <tr class="tinggi">
+                    <td class="col-md-6"><p class="font-size">Category</p></td>
+                    <td class="col-md-6 "><p class="font-size text-capitalize">{{ $category->category->name }}</p></td>
+                </tr>
+                <tr class="tinggi">
+                    <td class="col-md-6"><p class="font-size">Status</p></td>
+                    <td class="col-md-6 "><p class="text-capitalize font-size">{{ $status->status->name }}</p></p></td>
+                </tr>
+                <tr class="tinggi">
+                    <td class="col-md-6"><p class="font-size">Quota</p></td>
+                    <td class="col-md-6 "><p class="font-size">{{ $data_covid->quota }}</p></td>
+                </tr>
+                <tr class="tinggi">
+                    <td class="col-md-6"><p class="font-size">End Date</p></td>
+                    <td class="col-md-6 "><p class="font-size">{{ $data_covid->end_date }}</p></td>
+                </tr>
+                <tr class="tinggi">
+                    <td class="col-md-6"><p class="my-auto font-size">Description</p></td>
+                    <td class="col-md-6 "><p class="font-size">{{$data_covid->description}}</p>  </td>
+                </tr>
+                <tr class="my-auto">
+                    <td class="col-md-6"><p class="font-size">User Photo</p></td>
+                    <td class="col-md-6">
+                        <a class="btn btn-primary" href="{{url('storage/'.$data_covid->photo)}}">
+                            <i class="fa fa-picture-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 @endsection
