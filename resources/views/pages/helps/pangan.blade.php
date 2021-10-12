@@ -23,11 +23,11 @@
                 <table class="table table-striped table-bordered zero-configuration">
                   <thead>
                     <tr>
-                      <th>Judul</th>
-                      <th>Inisiator</th>
-                      <th>Kuota</th>
-                      <th>Start date</th>
-                      <th>Action</th>
+                        <th class="col-md-2">Judul</th>
+                        <th class="col-md-2">Inisiator</th>
+                        <th class="col-md-1">Kuota</th>
+                        <th class="col-md-1">Start date</th>
+                        <th class="col-md-2">Action</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -47,16 +47,16 @@
                         <button class="btn @if ($pangan->help_status_id==2)
                             hidden
                         @endif btn-success" data-toggle="modal" data-target="#accModal" type="submit">
-                            <i class="ft-check-square"></i>
+                            <i class="fa fa-check"></i>
                         </button>
 
                         <button class="btn @if ($pangan->help_status_id==3)
                             hidden
                         @endif btn-danger" data-toggle="modal" data-target="#rejectedModal" type="submit">
-                            <i class="ft-x-square"></i>
+                            <i class="fa fa-times"></i>
                         </button>
                         <a href="{{route('pangan.detail', $pangan->id)}}" class="btn btn-info">
-                            <i class="ft-eye"></i>
+                            <i class="fa fa-eye"></i>
                         </a>
                       </td>
                     </tr>
