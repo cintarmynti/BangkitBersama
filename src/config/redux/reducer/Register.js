@@ -32,6 +32,19 @@ const Register = (state = initialState, action) => {
                 ...state,
                 setAlert: action.value
             }
+        case 'RESET_REGISTER_FORM':
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    name: '',
+                    username: '',
+                    email: '',
+                    password: '',
+                    c_password: '',
+                    address: ''
+                }
+            }
     }
     return state
 }

@@ -14,10 +14,8 @@ const Profile = ({ navigation }) => {
                 <ProfileMenuList />
                 <H3 title="Akun" style={{ marginBottom: 32 }} />
                 <OutlineButton onPress={() => {
-                    Async.remove('isLogged')
-                    Async.remove('user')
-                    Async.remove('token')
                     navigation.dispatch(StackActions.replace('Auth'))
+                    Async.remove('isLogged')
                 }} title="Keluar" paddingVertical={20} />
             </View>
         </ScrollView>

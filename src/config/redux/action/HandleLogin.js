@@ -3,14 +3,16 @@ import { BASE_API_URL } from '../../../config'
 import { Async } from '../../../utils'
 import { StackActions } from '@react-navigation/native'
 
-const HandleLogin = (data, navigation) => async dispatch => {
-    await Axios.post(BASE_API_URL + 'login', data)
+const HandleLogin = (dataForm, navigation) => async dispatch => {
+    await Axios.post(BASE_API_URL + 'login', dataForm)
         .then(res => {
             const meta = res.data.meta;
             const data = res.data.data;
             if (meta.code == 200) {
                 Async.set('user', data);
-
+                Async.set('token', 'Bearer ' + data.token);
+                Async.set('isLogged', 'true');
+                dispatch({ type: 'RESET_LOGIN_FORM' })
 
                 navigation.dispatch(StackActions.replace('MainPages'))
             } else {

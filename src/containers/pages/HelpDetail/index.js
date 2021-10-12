@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Image, ScrollView, StyleSheet, View, TouchableOpacity } from 'react-native'
 import { PrimaryButton, H3, Small } from '../../../components'
 import { DetailHelpTabView } from '../../templates'
-import { Colors } from '../../../utils'
+import { Colors, Async } from '../../../utils'
 import ChatIcon from '../../../assets/icon/chat-2.svg'
 import UsersIcon from '../../../assets/icon/users.svg'
 import ClockIcon from '../../../assets/icon/clock.svg'
 import { HelpDetailContent } from '../../organisms'
 import ArrowLeftIcon from '../../../assets/icon/arrow-left-white.svg'
+import { useDispatch, useSelector } from 'react-redux'
+import { SetHelpDetail } from '../../../config/redux/action'
 
 
 const renderButton = (inisiator) => {
@@ -42,9 +44,19 @@ const renderDetail = (inisiator) => {
 
 }
 
-const HelpDetail = ({ navigation }) => {
+const HelpDetail = ({ route, navigation }) => {
 
     const [inisiator] = useState(false)
+
+    const dispatch = useDispatch();
+    const HelpDetailReducer = useSelector(state => state.HelpDetail)
+
+    useEffect(() => {
+        Async.get('token')
+            .then(res => {
+                dispatch(SetHelpDetail(route.params.help_id, res))
+            })
+    }, [])
 
     return (
         <ScrollView style={styles.wrapper}>
@@ -60,7 +72,7 @@ const HelpDetail = ({ navigation }) => {
                     <PrimaryButton style={{ width: 75, height: 35, marginBottom: 24 }} title="Ekonomi" />
                     {renderChatButton(inisiator)}
                 </View>
-                <H3 title="Bantuan Tunai Untuk Golongan MBR" style={{ marginBottom: 16 }} />
+                <H3 title={HelpDetailReducer.help.name} style={{ marginBottom: 16 }} />
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 8 }}>
                     <UsersIcon />
                     <Small style={{ marginLeft: 16 }} title="3 Orang" />

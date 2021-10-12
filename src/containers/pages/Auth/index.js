@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
-import { Colors } from '../../../utils'
+import { Colors, Async } from '../../../utils'
 import { OnBoardIllustarion, LinearButton, OutlineButton } from '../../../components'
 
 const Auth = ({ navigation }) => {
+
+    useEffect(() => {
+        Async.remove('user')
+        Async.remove('token')
+    })
 
     return (
         <View style={styles.wrapper}>

@@ -1,18 +1,15 @@
 const initialState = {
-    user: {},
-    token: ''
+    status: 1
 }
 
 const Auth = (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_USER':
+        case 'SET_STATUS':
             return {
                 ...state,
-                user: action.user,
-                token: `Bearer ${action.token}`
+                status: action.value
             }
     }
-
 
     return state
 }

@@ -2,10 +2,20 @@ import SetFormRegister from "./SetFormRegister";
 import HandleRegister from "./HandleRegister";
 import SetFormLogin from "./SetFormLogin";
 import HandleLogin from "./HandleLogin";
+import SetEditProfile from "./SetEditProfile";
+import HandleEditProfile from "./HandleEditProfile";
+import HandleHelpInput from "./HandleHelpInput";
+import SetMyHelps from "./SetMyHelps";
+import SetHelpDetail from "./SetHelpDetail";
 
 module.exports = {
     SetFormRegister,
     HandleRegister,
     SetFormLogin,
-    HandleLogin
+    HandleLogin,
+    SetEditProfile,
+    HandleEditProfile,
+    HandleHelpInput,
+    SetMyHelps,
+    SetHelpDetail
 }

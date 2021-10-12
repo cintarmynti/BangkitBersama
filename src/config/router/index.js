@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet, StatusBar } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -21,13 +21,24 @@ import {
 } from '../../containers/pages'
 import { DetailHelpTabView } from '../../containers/templates'
 import { TabIcon, FeaturesButton, TabItemActive } from '../../components'
-import { Colors } from '../../utils'
+import { Colors, Async } from '../../utils'
 import HeartIcon from '../../assets/icon/heart.svg'
+import { useDispatch } from 'react-redux';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainPages = () => {
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        Async.get('user')
+            .then(res => {
+                dispatch({ type: 'SET_STATUS', value: res.user_status_id })
+            })
+    }, [])
+
     return (
         <Tab.Navigator screenOptions={{
             headerShown: false,

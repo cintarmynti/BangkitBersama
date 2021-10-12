@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { SetFormLogin, HandleLogin } from '../../../config/redux/action'
 
 const LoginContent = ({ navigation }) => {
-
     const LoginReducer = useSelector(state => state.Login)
     const dispatch = useDispatch()
 

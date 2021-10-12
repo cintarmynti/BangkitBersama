@@ -21,38 +21,7 @@ const HomeScrollContentTwo = ({ style }) => {
                     percentage={25}
                     style={{ marginLeft: 30, marginRight: 20 }}
                 />
-                <CardCoverTop
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginRight: 20 }}
-                />
-                <CardCoverTop
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginRight: 20 }}
-                />
-                <CardCoverTop
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginRight: 20 }}
-                />
-                <CardCoverTop
-                    img={require('../../../assets/picture/bantu-bangkit.png')}
-                    title="BANTU PAK ADI MEMENUHI KEBUTUHAN KELUARGA"
-                    price="RP. 120.000.000,-"
-                    date="/ 20 Hari tersisa"
-                    percentage={25}
-                    style={{ marginRight: 20 }}
-                />
+
             </ScrollView>
 
         </View>

@@ -5,19 +5,24 @@ import { Colors, Async } from '../../../utils'
 import { AppLogo, H2, DoubleCircle } from '../../../components'
 
 const SplashScreen = ({ navigation }) => {
-    const [nextPage, setNextPage] = useState()
+    const [nextPage, setNextPage] = useState('')
 
     useEffect(() => {
-        if (!Async.get('isFirtsLaunch')) {
-            setNextPage('Welcome')
-        } else {
-            if (Async.get('isLogged')) {
-                setNextPage('MainPages')
-            } else {
-                setNextPage('Auth')
-
-            }
-        }
+        Async.get('isFirtsLaunch')
+            .then(res => {
+                if (!res) {
+                    setNextPage('Welcome')
+                } else {
+                    Async.get('isLogged')
+                        .then(res => {
+                            if (res) {
+                                setNextPage('MainPages')
+                            } else {
+                                setNextPage('Auth')
+                            }
+                        })
+                }
+            })
 
         setTimeout(() => {
             navigation.dispatch(StackActions.replace(nextPage))

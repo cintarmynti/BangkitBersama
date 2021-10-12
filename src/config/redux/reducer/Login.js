@@ -28,6 +28,16 @@ const Login = (state = initialState, action) => {
                 ...state,
                 setAlert: action.value
             }
+
+        case 'RESET_LOGIN_FORM':
+            return {
+                ...state,
+                form: {
+                    ...state.form,
+                    email: '',
+                    password: ''
+                }
+            }
     }
     return state
 }
