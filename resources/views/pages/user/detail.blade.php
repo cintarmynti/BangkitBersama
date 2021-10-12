@@ -12,81 +12,53 @@
 @endpush
 
 @section('content')
-    <section id="configuration">
-        <div class="row match-height">
-            <div class="col-xl-6 col-lg-12">
-                <div class="card">
-                    <div class="card-header border-0">
-                        <h4 class="card-title">Detail User</h4>
-                        <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-body">
-                            <div id="area-chart" class="height-280">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <p class="font-size">Name </p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="text-capitalize">: {{ $user->name }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        <p class="font-size">Nama Pengguna </p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p class="text-capitalize">: {{ $user->username }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        <p class="font-size">Profesi</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>: {{ $user->profession }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        <p class="font-size">Alamat</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>: {{ $user->address }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        <p class="font-size">Email</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p>: {{ $user->email }}</p>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-5">
-                                        <p class="font-size">Dokumen Verifikasi</p>
-                                    </div>
-                                    <div class="col-6">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-12">
-                <div class="card">
-                    <div class="card-header border-0">
-                        {{$user->document}}
-                        {{-- <img src="{{$user->document}}" alt="" height="30px" width="30px"> --}}
-                        <img src="{{url($user->document)}}" alt="" height="30px" width="60px">
-                        {{-- <img src="{{asset("storage/".$user->document)}}" alt="" height="30px" width="30px"> --}}
-
-                    </div>
-                </div>
-            </div>
+<section id="description" class="card">
+    <div class="card-header">
+      <h4 class="card-title">Detail User</h4>
+    </div>
+    <div class="card-content">
+      <div class="card-body">
+        <div class="card-text">
+            <table class="table table-column">
+                <tr>
+                    <td class="font-size">Name</td>
+                    <td class="font-size"><p class="text-capitalize">{{ $user->name }}</p></td>
+                </tr>
+                <tr>
+                    <td class="font-size">Nama Pengguna</td>
+                    <td class="font-size"><p class="text-capitalize">{{ $user->username }}</p></td>
+                </tr>
+                <tr>
+                    <td class="font-size">Profesi</td>
+                    <td class="font-size"><p class="text-capitalize">{{ $user->profession }}</p></td>
+                </tr>
+                <tr>
+                    <td class="font-size">Alamat</td>
+                    <td class="font-size"> <p class="text-capitalize">{{ $user->address }}</p></td>
+                </tr>
+                <tr>
+                    <td class="font-size">Email</td>
+                    <td class="font-size">{{ $user->email }}</td>
+                </tr>
+                <tr>
+                    <td class="font-size">Dokumen Verifikasi</td>
+                    <td class="font-size">
+                        <a class="btn btn-secondary" href="{{url($user->document)}}">
+                            <i class="fa fa-file-o"></i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-size">User Photo</td>
+                    <td class="font-size">
+                        <a class="btn btn-primary" href="{{url($user->photo)}}">
+                            <i class="fa fa-picture-o"></i>
+                        </a>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 @endsection
