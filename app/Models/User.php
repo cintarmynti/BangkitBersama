@@ -40,12 +40,12 @@ class User extends Authenticatable
 
     public function getPhotoAttribute($value)
     {
-        return url('storage/app/public/' . $value);
+        return url('storage/' . $value);
     }
 
     public function getDocumentAttribute($value)
     {
-        return url('storage/app/public/' . $value);
+        return url('storage/' . $value);
     }
 
     public function Help()
