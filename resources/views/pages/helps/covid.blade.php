@@ -22,11 +22,11 @@
                             <table class="table table-striped table-bordered zero-configuration">
                                 <thead>
                                     <tr>
-                                        <th>Judul</th>
-                                        <th>Inisiator</th>
-                                        <th>Kuota</th>
-                                        <th>Start date</th>
-                                        <th>Action</th>
+                                        <th class="col-md-2">Judul</th>
+                                        <th class="col-md-2">Inisiator</th>
+                                        <th class="col-md-1">Kuota</th>
+                                        <th class="col-md-1">Start date</th>
+                                        <th class="col-md-2">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -46,17 +46,17 @@
                                                 <button class="btn btn-success @if ($covid->help_status_id==2)
                                                     hidden
                                                 @endif" data-toggle="modal" data-target="#accModal" type="submit">
-                                                    <i class="ft-check-square"></i>
+                                                    <i class="fa fa-check"></i>
                                                 </button>
 
                                                 <button class="btn btn-danger @if ($covid->help_status_id==3)
                                                     hidden
                                                 @endif" data-toggle="modal" data-target="#rejectedModal" type="submit">
-                                                    <i class="ft-x-square"></i>
+                                                    <i class="fa fa-times"></i>
                                                 </button>
 
                                                 <a href="{{ route('covid.detail', $covid->id) }}" class="btn btn-info">
-                                                    <i class="ft-eye"></i>
+                                                    <i class="fa fa-eye"></i>
                                                 </a>
                                             </td>
                                         </tr>

@@ -21,6 +21,7 @@ class UsersTableSeeder extends Seeder
             'address' => 'Surabaya, Jawa Timur',
             'email' => 'ampersandtechsolution@gmail.com',
             'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
             'user_status_id' => 3
         ]);
 
@@ -31,6 +32,7 @@ class UsersTableSeeder extends Seeder
             'address' => 'Lamongan, Jawa Timur',
             'email' => 'wulandari@gmail.com',
             'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
             'user_status_id' => 2
         ]);
 
@@ -41,6 +43,7 @@ class UsersTableSeeder extends Seeder
             'address' => 'Jombang, Jawa Timur',
             'email' => 'jomban@gmail.com',
             'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
             'user_status_id' => 2
         ]);
 
@@ -51,6 +54,7 @@ class UsersTableSeeder extends Seeder
             'address' => 'telungagung, Jawa Timur',
             'email' => 'manda@gmail.com',
             'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
             'user_status_id' => 2
         ]);
 
@@ -61,6 +65,7 @@ class UsersTableSeeder extends Seeder
             'address' => 'Mojokerto, Jawa Timur',
             'email' => 'eriko@gmail.com',
             'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
             'user_status_id' => 2
         ]);
 
@@ -71,6 +76,74 @@ class UsersTableSeeder extends Seeder
             'address' => 'Malang, Jawa Timur',
             'email' => 'sasa@gmail.com',
             'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
+            'user_status_id' => 2
+        ]);
+
+
+        User::create([
+            'role_id' => 2,
+            'name' => 'lanang pramudia',
+            'username' => 'tian',
+            'address' => 'Magetan, Jawa Timur',
+            'email' => 'tian@gmail.com',
+            'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
+            'user_status_id' => 2
+        ]);
+
+        User::create([
+            'role_id' => 2,
+            'name' => 'Naufanda Aditiya zulfa',
+            'username' => 'naufan',
+            'address' => 'Magetan, Jawa Timur',
+            'email' => 'Naufan@gmail.com',
+            'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
+            'user_status_id' => 2
+        ]);
+
+        User::create([
+            'role_id' => 2,
+            'name' => 'Maulida Amelia Ayu Hapsari',
+            'username' => 'maulida',
+            'address' => 'Kediri, Jawa Timur',
+            'email' => 'Maulida@gmail.com',
+            'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
+            'user_status_id' => 2
+        ]);
+
+        User::create([
+            'role_id' => 2,
+            'name' => 'Risti Aprialia yasmin',
+            'username' => 'Risti',
+            'address' => 'Jombang, Jawa Timur',
+            'email' => 'liaa@gmail.com',
+            'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
+            'user_status_id' => 2
+        ]);
+
+        User::create([
+            'role_id' => 2,
+            'name' => 'Cinta Ramayanti',
+            'username' => 'cinta',
+            'address' => 'Trenggalek, Jawa Timur',
+            'email' => 'cinta@gmail.com',
+            'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
+            'user_status_id' => 2
+        ]);
+
+        User::create([
+            'role_id' => 2,
+            'name' => 'Dimas Adi Prayoga',
+            'username' => 'dimdim',
+            'address' => 'Surga, Akhirat',
+            'email' => 'dimas@gmail.com',
+            'password' => bcrypt('password123'),
+            'document' => 'assets/document/institution/ICxvy6r6IkPNxhGxjjvKKZmsp1LmhMfCaVZnKwBQ.jpg',
             'user_status_id' => 2
         ]);
     }
