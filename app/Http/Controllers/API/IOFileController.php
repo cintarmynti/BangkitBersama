@@ -49,4 +49,22 @@ class IOFileController extends Controller
             return ResponseFormatter::success('No File Uploaded!');
         }
     }
+
+    public function uploadPhotoHelp()
+    {
+        request()->validate([
+            'file' => 'mimes:png,jpg,jpeg'
+        ]);
+        if (request()->file('file')) {
+            try {
+                $data['file'] = request()->file('file')->store('assets/photo/help', 'public');
+                $data['file'] = $this->formatFile($data['file'], 'photo/help/');
+                return ResponseFormatter::success('Upload File Photo Help Successfull!', $data);
+            } catch (Exception $e) {
+                return ResponseFormatter::failed('Upload File Photo Help Failed!', 409, $e);
+            }
+        } else {
+            return ResponseFormatter::success('No File Uploaded!', []);
+        }
+    }
 }

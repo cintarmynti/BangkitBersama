@@ -39,7 +39,8 @@ class UserController extends Controller
     public function unverified()
     {
         User::where('id', request('id'))->update([
-            'user_status_id' => 1
+            'user_status_id' => 1,
+            'document' => null
         ]);
         Session::flash('message', 'Unverification User Successfull');
         return redirect()->back();

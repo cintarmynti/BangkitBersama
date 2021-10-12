@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+
 use App\Models\Help;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
@@ -24,7 +25,8 @@ class User extends Authenticatable
         'email',
         'profession',
         'password',
-        'document'
+        'document',
+        'user_status_id'
     ];
 
     /**
@@ -46,7 +48,8 @@ class User extends Authenticatable
         return url('storage/app/public/' . $value);
     }
 
-    public function Help(){
+    public function Help()
+    {
         //ngambil user dari user utama 1
         return $this->belongsTo(Help::class, 'user_id', 'id');
     }

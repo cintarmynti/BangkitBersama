@@ -28,5 +28,10 @@ class HelpStatusesTableSeeder extends Seeder
             'id' => 3,
             'name' => 'REJECTED'
         ]);
+
+        HelpStatus::create([
+            'id' => 4,
+            'name' => 'ENDED'
+        ]);
     }
 }

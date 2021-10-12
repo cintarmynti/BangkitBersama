@@ -48,6 +48,9 @@ class UserController extends Controller
         }
 
         $input['password'] = bcrypt($input['password']);
+        $input['photo'] = 'assets/photo/profile/default.jpg';
+        $input['document'] = null;
+        $input['user_status_id'] = 1;
         $user = User::create($input);
         $user['token'] =  $user->createToken('nApp')->accessToken;
 
@@ -77,8 +80,12 @@ class UserController extends Controller
         $query = User::where('id', $user->id);
         $input = request()->all();
 
+        if (isset($input['document'])) {
+            $input['user_status_id'] = 2;
+        }
+
         $user = $query->update($input);
-        $user =  $query->get();
+        $user =  $query->first();
 
         return ResponseFormatter::success('User Update Profile Success!', $user);
     }
