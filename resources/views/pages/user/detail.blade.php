@@ -81,7 +81,7 @@
                     <div class="card-header border-0">
                         {{$user->document}}
                         {{-- <img src="{{$user->document}}" alt="" height="30px" width="30px"> --}}
-                        <img src="{{url($user->document)}}" alt="" height="30px" width="30px">
+                        <img src="{{url($user->document)}}" alt="" height="30px" width="60px">
                         {{-- <img src="{{asset("storage/".$user->document)}}" alt="" height="30px" width="30px"> --}}
 
                     </div>
