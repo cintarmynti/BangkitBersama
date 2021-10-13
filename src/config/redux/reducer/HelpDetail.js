@@ -1,5 +1,13 @@
 const initialState = {
-    help: {}
+    help: {
+        category: {
+            name: ''
+        },
+        user: {
+            photo: ''
+        },
+        end_date: ''
+    }
 }
 
 

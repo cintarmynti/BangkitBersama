@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import { BASE_API_URL } from '../..'
+import { BASE_API_URL } from '../../../config'
 
 const SetHelpDetail = (help_id, token) => async dispatch => {
     await Axios.get(BASE_API_URL + 'help/get-detail/' + help_id, {
@@ -8,7 +8,6 @@ const SetHelpDetail = (help_id, token) => async dispatch => {
         },
     })
         .then(res => {
-            console.log(res)
             const meta = res.data.meta;
             const data = res.data.data;
             if (meta.code == 200) {

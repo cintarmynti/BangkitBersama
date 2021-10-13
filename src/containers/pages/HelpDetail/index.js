@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Image, ScrollView, StyleSheet, View, TouchableOpacity } from 'react-native'
-import { PrimaryButton, H3, Small } from '../../../components'
+import { PrimaryButton, H3, Small,ProfilePicture } from '../../../components'
 import { DetailHelpTabView } from '../../templates'
-import { Colors, Async } from '../../../utils'
+import { Colors, Async, CountDiffDate } from '../../../utils'
 import ChatIcon from '../../../assets/icon/chat-2.svg'
 import UsersIcon from '../../../assets/icon/users.svg'
 import ClockIcon from '../../../assets/icon/clock.svg'
@@ -12,7 +12,29 @@ import { useDispatch, useSelector } from 'react-redux'
 import { SetHelpDetail } from '../../../config/redux/action'
 
 
-const renderButton = (inisiator) => {
+
+
+const HelpDetail = ({ route, navigation }) => {
+
+    const [inisiator, setInisiator] = useState(false)
+
+    const dispatch = useDispatch();
+    const HelpDetailReducer = useSelector(state => state.HelpDetail)
+
+    useEffect( () => {
+        Async.get('token')
+                .then(res => {
+                    dispatch(SetHelpDetail(route.params.help_id, res))
+                })
+            Async.get('user')
+                .then(res => {
+                   if(HelpDetailReducer.help.user_id == res.id){
+                       setInisiator(true)
+                   }
+                })
+    }, [])
+
+    const renderButton = (inisiator) => {
     if (!inisiator) {
         return (
             <PrimaryButton style={{ marginBottom: 40 }} title="Ajukan Permintaan" paddingVertical={15} />
@@ -34,7 +56,7 @@ const renderChatButton = (inisiator) => {
 const renderDetail = (inisiator) => {
     if (!inisiator) {
         return (
-            <HelpDetailContent />
+            <HelpDetailContent  />
         )
     } else {
         return (
@@ -44,42 +66,28 @@ const renderDetail = (inisiator) => {
 
 }
 
-const HelpDetail = ({ route, navigation }) => {
-
-    const [inisiator] = useState(false)
-
-    const dispatch = useDispatch();
-    const HelpDetailReducer = useSelector(state => state.HelpDetail)
-
-    useEffect(() => {
-        Async.get('token')
-            .then(res => {
-                dispatch(SetHelpDetail(route.params.help_id, res))
-            })
-    }, [])
-
     return (
         <ScrollView style={styles.wrapper}>
-            <TouchableOpacity style={{ position: 'absolute', top: 30, left: 30, zIndex: 50 }} onPress={() => navigation.navigate('MainPages')}>
+            <TouchableOpacity style={{ position: 'absolute', top: 30, left: 30, zIndex: 50 }} onPress={() => navigation.navigate('TawarBantuan')}>
                 <ArrowLeftIcon />
             </TouchableOpacity>
             <View style={styles.cover}>
                 <View style={styles.overlay}></View>
-                <Image style={{ width: '100%', height: '100%' }} source={require('../../../assets/picture/bantu-bangkit.png')} />
+                <Image style={{width: '100%', height: '100%', resizeMode: 'cover'}} source={{ uri: HelpDetailReducer.help.photo }} />
             </View>
             <View style={styles.content}>
                 <View style={{ flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'space-between' }}>
-                    <PrimaryButton style={{ width: 75, height: 35, marginBottom: 24 }} title="Ekonomi" />
+                    <PrimaryButton style={{ width: 75, height: 35, marginBottom: 24 }} title={HelpDetailReducer.help.category.name} />
                     {renderChatButton(inisiator)}
                 </View>
                 <H3 title={HelpDetailReducer.help.name} style={{ marginBottom: 16 }} />
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 8 }}>
                     <UsersIcon />
-                    <Small style={{ marginLeft: 16 }} title="3 Orang" />
+                    <Small style={{ marginLeft: 16 }} title={HelpDetailReducer.help.quota + " Orang"} />
                 </View>
                 <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 40 }}>
                     <ClockIcon />
-                    <Small style={{ marginLeft: 16 }} title="21 Hari lagi" />
+                    <Small style={{ marginLeft: 16 }} title={CountDiffDate(HelpDetailReducer.help.end_date)+" Hari lagi"} />
                 </View>
                 {renderButton(inisiator)}
                 {renderDetail(inisiator)}

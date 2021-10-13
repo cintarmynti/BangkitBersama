@@ -27,7 +27,6 @@ const HandleHelpInput = (data, token, navigation) => async dispatch => {
         },
     })
         .then(res => {
-            console.log('SUCCESS STORE')
             const meta = res.data.meta;
             if (meta.code == 200) {
                 dispatch({ type: 'RESET_HELP_INPUT_FORM' })

@@ -128,7 +128,6 @@ const EditProfile = ({ navigation }) => {
     const submitEditProfile = () => {
         dispatch({ type: 'SET_ALERT_EDIT_PROFILE', value: false })
         for (let item in EditProfileReducer.form) {
-            console.log(item, EditProfileReducer.form[item])
             if (!EditProfileReducer.form[item]) {
                 dispatch({ type: 'SET_ALERT_TEXT_EDIT_PROFILE', value: 'Semua kolom wajib diisi' })
                 dispatch({ type: 'SET_ALERT_EDIT_PROFILE', value: true })

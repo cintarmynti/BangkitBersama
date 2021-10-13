@@ -4,8 +4,12 @@ import { H4, ProfilePicture, Small, P } from '../../../components'
 import { Colors } from '../../../utils'
 import VerifiedIcon from '../../../assets/icon/verified.svg'
 import UserIcon from '../../../assets/icon/user.svg'
+import { useSelector } from 'react-redux'
 
 const HelpDetailContent = () => {
+
+    const HelpDetailReducer = useSelector(state => state.HelpDetail)
+
     return (
         <View>
             <H4 style={{ marginBottom: 16 }} title="Inisiator" />
@@ -22,13 +26,13 @@ const HelpDetailContent = () => {
                     justifyContent: 'space-between'
                 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <ProfilePicture img={''} />
+                        <ProfilePicture img={HelpDetailReducer.help.user.photo} />
                         <View style={{ marginLeft: 16 }}>
                             <View style={{ flexDirection: 'row' }}>
-                                <Small title="Arya Rizky" style={{ marginBottom: 8, marginRight: 9 }} />
+                                <Small title={HelpDetailReducer.help.user.name} style={{ marginBottom: 8, marginRight: 9 }} />
                                 <VerifiedIcon />
                             </View>
-                            <Small title="Relawan Masyarakat" color={Colors.grey} />
+                            <Small title={HelpDetailReducer.help.user.profession} color={Colors.grey} />
                         </View>
                     </View>
                     <UserIcon />
@@ -44,7 +48,7 @@ const HelpDetailContent = () => {
                     padding: 16,
                     marginBottom: 40
                 }}>
-                    <P color={Colors.darkGrey} title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra massa sed faucibus" />
+                    <P color={Colors.darkGrey} title={HelpDetailReducer.help.description} />
                 </View>
             </View>
             <H4 style={{ marginBottom: 16 }} title="Mereka Yang Bangkit" />

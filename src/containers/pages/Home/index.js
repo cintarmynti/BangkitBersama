@@ -1,10 +1,22 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
 import { HeaderHome } from '../../../components'
 import { HelpCategory, HomeScrollContentOne, HomeScrollContentTwo } from '../../organisms'
-import { Colors } from '../../../utils'
+import { Colors, Async } from '../../../utils'
+import { SetHelpsForHome } from '../../../config/redux/action'
+import { useDispatch } from 'react-redux'
 
 const Home = ({ navigation }) => {
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        Async.get('token')
+            .then(res => {
+                dispatch(SetHelpsForHome(res))
+            })
+    } )
+
     return (
         <ScrollView showsVerticalScrollIndicator={false} style={styles.wrapper}>
             <HeaderHome />

@@ -1,8 +1,8 @@
 import Axios from 'axios'
 import { BASE_API_URL } from '../../../config'
 
-const SetMyHelps = (token) => async dispatch => {
-    await Axios.get(BASE_API_URL + 'help/get-by-inisiator', {
+const SetHelpsForHome = (token) => async dispatch => {
+    await Axios.get(BASE_API_URL + 'help/get-for-home', {
         headers: {
             Authorization: token
         },
@@ -11,10 +11,10 @@ const SetMyHelps = (token) => async dispatch => {
             const meta = res.data.meta;
             const data = res.data.data;
             if (meta.code == 200) {
-                dispatch({ type: 'SET_MY_HELPS', value: data })
+                dispatch({ type: 'SET_HELPS_FOR_HOME', value: data })
             }
         })
-        .catch(err => console.log('GET MY HELPS ', err))
+        .catch(err => console.log('GET HELPS FOR HOME', err))
 }
 
-export default SetMyHelps
+export default SetHelpsForHome

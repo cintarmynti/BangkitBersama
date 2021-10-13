@@ -7,6 +7,7 @@ import HandleEditProfile from "./HandleEditProfile";
 import HandleHelpInput from "./HandleHelpInput";
 import SetMyHelps from "./SetMyHelps";
 import SetHelpDetail from "./SetHelpDetail";
+import SetHelpsForHome from "./SetHelpsForHome";
 
 module.exports = {
     SetFormRegister,
@@ -17,5 +18,6 @@ module.exports = {
     HandleEditProfile,
     HandleHelpInput,
     SetMyHelps,
-    SetHelpDetail
+    SetHelpDetail,
+    SetHelpsForHome
 }

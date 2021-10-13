@@ -19,6 +19,7 @@ const TawarBantuan = ({ navigation }) => {
     const [category, setCategory] = useState(1)
 
     useEffect(() => {
+        dispatch({ type: 'RESET_HELP_INPUT_STEP', value: 1 })
         Async.get('token')
             .then(res => {
                 dispatch(SetMyHelps(res))

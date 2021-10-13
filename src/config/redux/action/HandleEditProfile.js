@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import { BASE_API_URL } from '../..'
+import { BASE_API_URL } from '../../../config'
 import { Async } from '../../../utils'
 
 const HandleEditProfile = (data, token, navigation) => async dispatch => {

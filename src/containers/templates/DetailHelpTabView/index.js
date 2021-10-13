@@ -4,20 +4,21 @@ import { H4 } from '../../../components'
 import { HelpDetailContent, HelpRequests } from '../../organisms'
 import { Colors } from '../../../utils'
 
-const renderContent = (view) => {
-    switch (view) {
-        case 'detail':
-            return (<HelpDetailContent />)
-        case 'permintaan':
-            return (<HelpRequests />)
-        default:
-            return (<HelpDetailContent />)
-    }
-}
 
 const DetailHelpTabView = () => {
 
     const [view, setView] = useState('detail')
+
+    const renderContent = (view) => {
+        switch (view) {
+            case 'detail':
+                return (<HelpDetailContent />)
+            case 'permintaan':
+                return (<HelpRequests />)
+            default:
+                return (<HelpDetailContent />)
+        }
+    }
 
     return (
         <View>
